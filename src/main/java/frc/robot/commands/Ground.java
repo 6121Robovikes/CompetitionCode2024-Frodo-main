@@ -18,8 +18,6 @@ public class Ground extends Command {
     double groundPosition = 52; //determine this position 
     double stowPosition = 0;
 
-    double speed = 2;
-
   public Ground(PivotSubsystem m_pivot, IntakeSubsystem m_intake)   
   {
     
@@ -36,8 +34,6 @@ public class Ground extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-
-
 
   m_pivot.setPosition(groundPosition);
   m_intake.feedIn();

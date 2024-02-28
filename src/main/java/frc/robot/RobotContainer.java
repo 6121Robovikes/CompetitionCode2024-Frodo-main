@@ -24,9 +24,9 @@ import frc.robot.commands.Stow;
 import frc.robot.commands.Ground;
 import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.LeftClimberSubsystem;
-import frc.robot.subsystems.LeftClimberSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
+import frc.robot.subsystems.RightClimberSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class RobotContainer {
@@ -38,8 +38,9 @@ public class RobotContainer {
   private static final PivotSubsystem m_pivot = new PivotSubsystem();
   private static final IntakeSubsystem m_intake = new IntakeSubsystem();
   private static final LeftClimberSubsystem m_leftClimb = new LeftClimberSubsystem();
+  private static final RightClimberSubsystem m_rightClimb = new RightClimberSubsystem();
   public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
-  // private static final ClimberSubsystem m_climb = new ClimberSubsystem();
+
 
 
   //drivetrain stuff... don't mess with it
@@ -97,8 +98,9 @@ public class RobotContainer {
     m_controller.a().whileFalse(new Shoot(m_shooter, 0));
     m_controller.b().whileTrue(new Source(m_pivot, m_intake));
     m_controller.x().whileTrue(new Ground(m_pivot, m_intake));
-    m_controller.y().whileTrue(new Stow(m_pivot, m_intake));
-    //m_controller.getLeftY().whileTrue(new Climb(m_leftClimb));
+   // m_controller.y().whileTrue(new Stow(m_pivot, m_intake));
+    m_controller.y().whileTrue(new Climb(m_leftClimb));
+    //m_controller.rightBumper().whileTrue(new Climb(m_rightClimb));
     
   
 
@@ -112,16 +114,7 @@ public class RobotContainer {
     // JoystickButton Stow = new JoystickButton(m_joystick, 10);
     // Stow.onTrue(new Stow(m_pivot, m_intake));
 
-    
 
-
-    //move ar to amp, intake out
-
-    //move arm to ground, intake in
-
-    //mover arm to stow, intake off
-
-    //move arm to feed, intake out
 
   }
 

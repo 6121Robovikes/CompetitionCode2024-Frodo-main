@@ -11,16 +11,18 @@ import frc.robot.subsystems.RightClimberSubsystem;
 public class Climb extends Command {
   LeftClimberSubsystem m_leftClimb;
   RightClimberSubsystem m_rightClimb;
-    double extendPosition = 0; //determine this position 
+
+    double rightExtendPosition = 0; //determine this position 
+    double leftExtendPosition = 10;
     double retractPosition = 0;
 
-  public Climb(LeftClimberSubsystem m_leftClimb, RightClimberSubsystem m_rightClimb) {
+  public Climb(LeftClimberSubsystem m_leftClimb) {
     
     this.m_leftClimb = m_leftClimb;
     this.m_rightClimb = m_rightClimb;
-    
 
-    addRequirements( m_leftClimb, m_rightClimb);
+
+    addRequirements(m_leftClimb, m_rightClimb);
   }
 
   // Called when the command is initially scheduled.
@@ -29,8 +31,11 @@ public class Climb extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
 
+  m_leftClimb.climbExtend(leftExtendPosition);
+
+  }
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}

@@ -74,7 +74,7 @@ public class LeftClimberSubsystem extends SubsystemBase{
  
  public double getPosition() {
 
-    System.out.println("left climb Postion"+ m_leftClimb.getRotorPosition());
+    System.out.println("left climb Position"+ m_leftClimb.getRotorPosition());
     return m_leftClimb.getRotorPosition().getValueAsDouble();
  }
 
