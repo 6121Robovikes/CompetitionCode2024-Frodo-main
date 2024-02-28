@@ -16,13 +16,15 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.Climb;
 import frc.robot.commands.CommandSwerveDrivetrain;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Source;
 import frc.robot.commands.Stow;
 import frc.robot.commands.Ground;
 import frc.robot.constants.TunerConstants;
-// import frc.robot.subsystems.ClimberSubsystem;
+import frc.robot.subsystems.LeftClimberSubsystem;
+import frc.robot.subsystems.LeftClimberSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -35,6 +37,7 @@ public class RobotContainer {
   private static final ShooterSubsystem m_shooter = new ShooterSubsystem();
   private static final PivotSubsystem m_pivot = new PivotSubsystem();
   private static final IntakeSubsystem m_intake = new IntakeSubsystem();
+  private static final LeftClimberSubsystem m_leftClimb = new LeftClimberSubsystem();
   public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
   // private static final ClimberSubsystem m_climb = new ClimberSubsystem();
 
@@ -68,7 +71,7 @@ public class RobotContainer {
 
 
    //default shooterspeed
-      //  m_shooter.setDefaultCommand(new Shoot(m_shooter, 80));
+      //  m_shooter.setDefaultCommand(new Shoot(m_shooter, 60));
    
       m_driverController.a().whileTrue(drivetrain.applyRequest(() -> brake));
       m_driverController.b().whileTrue(drivetrain
@@ -95,6 +98,7 @@ public class RobotContainer {
     m_controller.b().whileTrue(new Source(m_pivot, m_intake));
     m_controller.x().whileTrue(new Ground(m_pivot, m_intake));
     m_controller.y().whileTrue(new Stow(m_pivot, m_intake));
+    //m_controller.getLeftY().whileTrue(new Climb(m_leftClimb));
     
   
 

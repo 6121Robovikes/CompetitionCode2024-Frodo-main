@@ -12,10 +12,10 @@ import com.ctre.phoenix6.signals.FeedbackSensorSourceValue;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.OperatorConstants;
 
-public class ClimberSubsystem extends SubsystemBase{
+public class LeftClimberSubsystem extends SubsystemBase{
 
     TalonFX m_leftClimb; 
-    TalonFX m_rightClimb;
+
 
   FeedbackConfigs climbFeedbackConfigs = new FeedbackConfigs();
   CurrentLimitsConfigs climbCurrentLimits = new CurrentLimitsConfigs();
@@ -23,17 +23,13 @@ public class ClimberSubsystem extends SubsystemBase{
   private final PositionVoltage m_request = new PositionVoltage(0, 0, false, 0, 0, false, false, false);
 
 
-    public ClimberSubsystem() {
+    public LeftClimberSubsystem() {
         m_leftClimb = new TalonFX(OperatorConstants.ClimberLeftMotorID, "Canivore"); 
-        m_rightClimb = new TalonFX(OperatorConstants.ClimberRigtMotorID, "Canivore");
+    
     
         m_leftClimb.setInverted(false);
-        m_rightClimb.setInverted(false);
 
 
-        //factory default both motors
-        m_leftClimb.getConfigurator().apply(new TalonFXConfiguration());
-        m_rightClimb.getConfigurator().apply(new TalonFXConfiguration());
 
       // Motion Profile Position
         var slot0Configs = new Slot0Configs();
@@ -46,18 +42,18 @@ public class ClimberSubsystem extends SubsystemBase{
     slot0Configs.kD = 0.1; // A velocity error of 1 rps results in 0.1 V output
 
     m_leftClimb.getConfigurator().apply(slot0Configs);
-    m_rightClimb.getConfigurator().apply(slot0Configs);
+  
 
     climbFeedbackConfigs.withFeedbackSensorSource(FeedbackSensorSourceValue.RotorSensor);
     
     m_leftClimb.getConfigurator().apply(climbFeedbackConfigs);
-    m_rightClimb.getConfigurator().apply(climbFeedbackConfigs);
+
 
     climbCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary
     climbCurrentLimits.withStatorCurrentLimitEnable(true);
 
     m_leftClimb.getConfigurator().apply(climbCurrentLimits);
-    m_rightClimb.getConfigurator().apply(climbCurrentLimits);
+  
 
   }
 
@@ -70,9 +66,9 @@ public class ClimberSubsystem extends SubsystemBase{
 
     final PositionVoltage m_request = new PositionVoltage(0).withSlot(0);
 
-    //feedforward is realy hard math so don't do it yet
+    //feedforward is realy hard math so don't do it without supervision
     m_leftClimb.setControl(m_request.withPosition(position).withFeedForward(0));
-    m_rightClimb.setControl(m_request.withPosition(position).withFeedForward(0));
+
 
  }
  

@@ -5,17 +5,22 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.ClimberSubsystem;
+import frc.robot.subsystems.LeftClimberSubsystem;
+import frc.robot.subsystems.RightClimberSubsystem;
 
 public class Climb extends Command {
-  ClimberSubsystem m_Climb;
+  LeftClimberSubsystem m_leftClimb;
+  RightClimberSubsystem m_rightClimb;
+    double extendPosition = 0; //determine this position 
+    double retractPosition = 0;
 
-  public Climb(ClimberSubsystem m_climb) {
+  public Climb(LeftClimberSubsystem m_leftClimb, RightClimberSubsystem m_rightClimb) {
     
-    this.m_Climb = m_climb;
+    this.m_leftClimb = m_leftClimb;
+    this.m_rightClimb = m_rightClimb;
     
 
-    addRequirements( m_climb);
+    addRequirements( m_leftClimb, m_rightClimb);
   }
 
   // Called when the command is initially scheduled.
