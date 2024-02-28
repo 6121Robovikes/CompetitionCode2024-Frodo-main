@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Climb;
+import frc.robot.commands.ClimbStart;
 import frc.robot.commands.CommandSwerveDrivetrain;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Source;
@@ -99,8 +100,12 @@ public class RobotContainer {
     m_controller.b().whileTrue(new Source(m_pivot, m_intake));
     m_controller.x().whileTrue(new Ground(m_pivot, m_intake));
    // m_controller.y().whileTrue(new Stow(m_pivot, m_intake));
-    m_controller.y().whileTrue(new Climb(m_leftClimb));
+    m_controller.y().whileTrue(new Climb(m_leftClimb, m_rightClimb));
     //m_controller.rightBumper().whileTrue(new Climb(m_rightClimb));
+
+    //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
+    m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));
+    m_leftClimb.setDefaultCommand(new ClimbStart(m_leftClimb, m_rightClimb));
     
   
 
