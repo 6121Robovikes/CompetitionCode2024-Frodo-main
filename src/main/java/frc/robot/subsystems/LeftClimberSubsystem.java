@@ -49,7 +49,7 @@ public class LeftClimberSubsystem extends SubsystemBase{
     m_leftClimb.getConfigurator().apply(climbFeedbackConfigs);
 
 
-    climbCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary
+    climbCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary
     climbCurrentLimits.withStatorCurrentLimitEnable(true);
 
     m_leftClimb.getConfigurator().apply(climbCurrentLimits);

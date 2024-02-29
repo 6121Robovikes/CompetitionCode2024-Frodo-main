@@ -46,7 +46,7 @@ public class RightClimberSubsystem extends SubsystemBase{
     climbFeedbackConfigs.withFeedbackSensorSource(FeedbackSensorSourceValue.RotorSensor);
     m_rightClimb.getConfigurator().apply(climbFeedbackConfigs);
 
-    climbCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary
+    climbCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary
     climbCurrentLimits.withStatorCurrentLimitEnable(true);
 
     m_rightClimb.getConfigurator().apply(climbCurrentLimits);

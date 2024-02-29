@@ -104,14 +104,15 @@ public class RobotContainer {
     // m_controller.y().whileTrue(new Climb(m_leftClimb, m_rightClimb));
     //m_controller.rightBumper().whileTrue(new Climb(m_rightClimb));
 
-    m_controller.button(11).whileTrue(new Shoot(m_shooter, 20));
-    m_controller.button(11).whileFalse(new Shoot(m_shooter, 0));
-    m_controller.button(9).whileTrue(new Source(m_pivot, m_intake));
-    m_controller.button(10).whileTrue(new Ground(m_pivot, m_intake));
+    m_controller.button(11).toggleOnTrue(new Shoot(m_shooter, 20));
+    m_controller.button(11).toggleOnFalse(new Shoot(m_shooter, 0));
+    m_controller.button(9).onTrue(new Source(m_pivot, m_intake));
+    m_controller.button(10).onTrue(new Ground(m_pivot, m_intake));
     m_controller.button(6).whileTrue(new Climb(m_leftClimb, m_rightClimb));
+    
     //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
     m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));
-    m_leftClimb.setDefaultCommand(new ClimbStart(m_leftClimb, m_rightClimb));
+    //m_leftClimb.setDefaultCommand(new ClimbStart(m_leftClimb, m_rightClimb));
     
   
 

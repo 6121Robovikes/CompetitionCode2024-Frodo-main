@@ -46,7 +46,7 @@ public class IntakeSubsystem extends SubsystemBase {
     // m_intakeMotor.setControl(m_request.withVelocity(2));//adjust
 
     //Set Voltage Output
-    m_intakeMotor.setVoltage(2.5);  //TODO: Set Voltage for what works well with the robot
+    m_intakeMotor.setVoltage(10);  //TODO: Set Voltage for what works well with the robot
   
   }
   public void feedOut() {
@@ -54,7 +54,7 @@ public class IntakeSubsystem extends SubsystemBase {
     // final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
     // m_intakeMotor.setControl(m_request.withVelocity(-2));//adjust
 
-    m_intakeMotor.setVoltage(-2.5); //TODO: Set Voltage for what works well with the robot
+    m_intakeMotor.setVoltage(0); //TODO: Set Voltage for what works well with the robot
   }
 
   public void ampOut() {
@@ -62,7 +62,7 @@ public class IntakeSubsystem extends SubsystemBase {
     // final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
     // m_intakeMotor.setControl(m_request.withVelocity(-1.5)); //adjust
 
-    m_intakeMotor.setVoltage(-6);   //TODO Tune this value so that it works well with the robot.
+    m_intakeMotor.setVoltage(0);   //TODO Tune this value so that it works well with the robot.
 
 
   }

@@ -10,10 +10,10 @@ import frc.robot.subsystems.RightClimberSubsystem;
 
 public class ClimbStart extends Command {
     LeftClimberSubsystem m_leftClimb;
-  RightClimberSubsystem m_rightClimb;
+    RightClimberSubsystem m_rightClimb;
 
-    double rightExtendPosition = 2; //determine this position 
-    double leftExtendPosition = 10;
+    double rightExtendPosition = 5; //determine this position 
+    double leftExtendPosition = 5;
     double retractPosition = 0.1; //Just above retracted to prevent tension on the climber during normal operation
   /** Creates a new ClimbStart. */
   public ClimbStart(LeftClimberSubsystem m_leftClimb, RightClimberSubsystem m_rightClimb) {
@@ -32,8 +32,8 @@ public class ClimbStart extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_leftClimb.climbExtend(retractPosition);
-    m_rightClimb.climbExtend(retractPosition);
+    m_leftClimb.climbExtend(leftExtendPosition);
+    m_rightClimb.climbExtend(rightExtendPosition);
   }
 
   // Called once the command ends or is interrupted.

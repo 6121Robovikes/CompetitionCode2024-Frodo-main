@@ -31,7 +31,7 @@ public class PivotSubsystem extends SubsystemBase {
     
     
     // Factory default on motors
-    //m_pivotMotor.getConfigurator().apply(new TalonFXConfiguration());
+    m_pivotMotor.getConfigurator().apply(new TalonFXConfiguration());
    
 
      // Motion Profile Position
@@ -39,7 +39,6 @@ public class PivotSubsystem extends SubsystemBase {
     //Per https://v6.docs.ctr-electronics.com/en/stable/docs/api-reference/device-specific/talonfx/basic-pid-control.html#position-control
     //Recommend no S,V,A values yet.
     slot0Configs.kG = 0.01; //value of gravity
-    
     slot0Configs.kS = 0; // Add 0.25 V output to overcome static friction
     slot0Configs.kV = 0; // A velocity target of 1 rps results in 0.12 V output
     slot0Configs.kP = 1; // A position error of 2.5 rotations results in 12 V output
