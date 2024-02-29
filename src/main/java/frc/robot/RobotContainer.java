@@ -23,6 +23,7 @@ import frc.robot.commands.CommandSwerveDrivetrain;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Source;
 import frc.robot.commands.Stow;
+import frc.robot.commands.TestingIntake;
 import frc.robot.commands.Ground;
 import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.LeftClimberSubsystem;
@@ -109,6 +110,7 @@ public class RobotContainer {
     m_controller.button(9).onTrue(new Source(m_pivot, m_intake, 1));
     m_controller.button(10).onTrue(new Ground(m_pivot, m_intake,5));
     m_controller.button(6).whileTrue(new Climb(m_leftClimb, m_rightClimb));
+    m_controller.button(8).onTrue(new TestingIntake(m_intake, 5));
     
     //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
     m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));
