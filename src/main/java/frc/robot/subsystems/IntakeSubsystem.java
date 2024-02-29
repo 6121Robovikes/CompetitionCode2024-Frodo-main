@@ -11,12 +11,12 @@ import frc.robot.constants.OperatorConstants;
 
 public class IntakeSubsystem extends SubsystemBase {
   TalonFX m_intakeMotor; 
-//  VoltageOut m_request = new VoltageOut(0);
+ VoltageOut m_request = new VoltageOut(0);
 
-//  CurrentLimitsConfigs intakeCurrentLimits = new CurrentLimitsConfigs();
+  CurrentLimitsConfigs intakeCurrentLimits = new CurrentLimitsConfigs();
 
   public IntakeSubsystem() {
-    m_intakeMotor = new TalonFX(OperatorConstants.IntakeMotorID, "canivore");
+    m_intakeMotor = new TalonFX(OperatorConstants.IntakeMotorID, "Canivore");
 
     var slot0Configs = new Slot0Configs();
     slot0Configs.kS = 0; //.25 V outpot to overcome static friction
@@ -28,35 +28,35 @@ public class IntakeSubsystem extends SubsystemBase {
 
      m_intakeMotor.getConfigurator().apply(slot0Configs);
 
-//    intakeCurrentLimits.withStatorCurrentLimitEnable(true);
-//    intakeCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
+     intakeCurrentLimits.withStatorCurrentLimitEnable(true);
+    intakeCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
     
-//    m_intakeMotor.getConfigurator().apply(intakeCurrentLimits);
+  m_intakeMotor.getConfigurator().apply(intakeCurrentLimits);
 
   }
   @Override
   public void periodic() {
   }
 
-  public void feedIn(double speed) {
+  public void feedIn() {
 
-    final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
+   // final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
     
     //Set speed in sooter robot container default shooter
-    m_intakeMotor.setControl(m_request.withVelocity(speed));
+  //  m_intakeMotor.setControl(m_request.withVelocity(speed));
 
 
 
     //Set Voltage Output
-    //m_intakeMotor.setVoltage(10);  //TODO: Set Voltage for what works well with the robot
+    m_intakeMotor.setVoltage(1);  //TODO: Set Voltage for what works well with the robot
   
   }
   public void feedOut() {
 
-    // final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
-    // m_intakeMotor.setControl(m_request.withVelocity(-2));//adjust
+  //  final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
+    //m_intakeMotor.setControl(m_request.withVelocity(-2));//adjust
 
-    //m_intakeMotor.setVoltage(0); //TODO: Set Voltage for what works well with the robot
+    m_intakeMotor.setVoltage(-1); //TODO: Set Voltage for what works well with the robot
   }
 
   public void ampOut() {

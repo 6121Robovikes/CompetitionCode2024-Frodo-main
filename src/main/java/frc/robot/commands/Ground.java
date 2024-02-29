@@ -18,15 +18,15 @@ public class Ground extends Command {
     double groundPosition = 52; //determine this position 
     double stowPosition = 0;
 
-    double speed;
+    
 
 
-  public Ground(PivotSubsystem m_pivot, IntakeSubsystem m_intake, double speed)   
+  public Ground(PivotSubsystem m_pivot, IntakeSubsystem m_intake)   
   {
     
     this.m_pivot = m_pivot;
     this.m_intake = m_intake;
-    this.speed = speed;
+  
 
     addRequirements(m_pivot, m_intake); //
   }
@@ -40,14 +40,14 @@ public class Ground extends Command {
   public void execute() {
 
   m_pivot.setPosition(groundPosition);
-  m_intake.feedIn(speed);
+  m_intake.feedIn();
 
   }
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
 
-    //m_pivot.setPosition(stowPosition);
+    m_pivot.setPosition(stowPosition);
 
   }
   // Returns true when the command should end.

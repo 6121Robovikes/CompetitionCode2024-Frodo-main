@@ -16,9 +16,8 @@ public class Source extends Command {
   IntakeSubsystem m_intake;
 
   double sourcePosition = 17.75;  
-  double speed;
 
-  public Source(PivotSubsystem m_pivot, IntakeSubsystem m_intake, double speed) 
+  public Source(PivotSubsystem m_pivot, IntakeSubsystem m_intake) 
   {
     this.m_pivot = m_pivot;
     this.m_intake = m_intake;
@@ -36,7 +35,7 @@ public class Source extends Command {
   public void execute() {
   
    m_pivot.setPosition(sourcePosition);
-   m_intake.feedIn(speed);
+   m_intake.feedIn();
     
   }
 

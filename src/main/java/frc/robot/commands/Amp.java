@@ -16,10 +16,10 @@ public class Amp extends Command {
     double ampPosition = 22.1; //determine this position 
   
 
-  public Amp(PivotSubsystem m_pivot)  //add , IntakeSubsystem m_intake 
+  public Amp(PivotSubsystem m_pivot, IntakeSubsystem m_intake ) 
   {
     this.m_pivot = m_pivot;
-    // this.m_intake = m_intake;
+    this.m_intake = m_intake;
 
     addRequirements( m_pivot); //m_intake
   
@@ -36,6 +36,7 @@ public class Amp extends Command {
   public void execute() {
 
     m_pivot.setPosition(ampPosition);
+    m_intake.ampOut();
   }
 
   // Called once the command ends or is interrupted.

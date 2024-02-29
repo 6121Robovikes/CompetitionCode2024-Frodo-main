@@ -17,14 +17,15 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.Amp;
 import frc.robot.commands.Climb;
 import frc.robot.commands.ClimbStart;
 import frc.robot.commands.CommandSwerveDrivetrain;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Source;
 import frc.robot.commands.Stow;
-import frc.robot.commands.TestingIntake;
 import frc.robot.commands.Ground;
+import frc.robot.commands.LoadTheShooter;
 import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.LeftClimberSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -92,25 +93,15 @@ public class RobotContainer {
   
     //OPERATOR BINDINGS
 
-    //stop shooter
-    // JoystickButton shoot = new JoystickButton (m_joystick, 7);
-    // shoot.toggleOnTrue(new Shoot(m_shooter, 20));
-    // shoot.toggleOnFalse(new Shoot(m_shooter, 0));
-    
-    // m_controller.a().whileTrue(new Shoot(m_shooter, 20));
-    // m_controller.a().whileFalse(new Shoot(m_shooter, 0));
-    // m_controller.b().whileTrue(new Source(m_pivot, m_intake));
-    // m_controller.x().whileTrue(new Ground(m_pivot, m_intake));
-   // m_controller.y().whileTrue(new Stow(m_pivot, m_intake));
-    // m_controller.y().whileTrue(new Climb(m_leftClimb, m_rightClimb));
-    //m_controller.rightBumper().whileTrue(new Climb(m_rightClimb));
-
     m_controller.button(11).toggleOnTrue(new Shoot(m_shooter, 20));
     m_controller.button(11).toggleOnFalse(new Shoot(m_shooter, 0));
-    m_controller.button(9).onTrue(new Source(m_pivot, m_intake, 1));
-    m_controller.button(10).onTrue(new Ground(m_pivot, m_intake,5));
+    m_controller.button(9).onTrue(new Source(m_pivot, m_intake));
+    m_controller.button(10).onTrue(new Ground(m_pivot, m_intake));
+    m_controller.button(7).toggleOnTrue(new LoadTheShooter(m_pivot, m_intake));
+    m_controller.button(7).toggleOnFalse(new LoadTheShooter(m_pivot, m_intake));
+    m_controller.button(8).onTrue(new Amp(m_pivot, m_intake));
+    //m_controller.button(12).onTrue(new Stow(m_pivot, m_intake));
     m_controller.button(6).whileTrue(new Climb(m_leftClimb, m_rightClimb));
-    m_controller.button(8).onTrue(new TestingIntake(m_intake, 5));
     
     //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
     m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));
@@ -119,8 +110,6 @@ public class RobotContainer {
 
 
   }
-
-
 
 
   public RobotContainer() {

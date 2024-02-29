@@ -12,13 +12,15 @@ public class Stow extends Command {
 
   PivotSubsystem m_pivot;
   IntakeSubsystem m_intake;
+ 
 
   double stowPosition = 0;  
 
   public Stow(PivotSubsystem m_pivot, IntakeSubsystem m_intake) 
   {
     this.m_pivot = m_pivot;
-    this.m_intake = m_intake;
+    this.m_intake= m_intake;
+   
 
     addRequirements(m_pivot, m_intake); 
     
@@ -33,7 +35,8 @@ public class Stow extends Command {
   public void execute() {
   
    m_pivot.setPosition(stowPosition);
-   m_intake.stopIntake();
+  
+  
     
   }
 
