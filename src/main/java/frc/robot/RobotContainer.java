@@ -7,6 +7,7 @@ package frc.robot;
 import com.ctre.phoenix6.Utils;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
+import com.pathplanner.lib.commands.PathPlannerAuto;
 
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -27,10 +28,9 @@ import frc.robot.commands.Stow;
 import frc.robot.commands.Ground;
 import frc.robot.commands.LoadTheShooter;
 import frc.robot.constants.TunerConstants;
-import frc.robot.subsystems.LeftClimberSubsystem;
+import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
-import frc.robot.subsystems.RightClimberSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class RobotContainer {
@@ -41,8 +41,7 @@ public class RobotContainer {
   private static final ShooterSubsystem m_shooter = new ShooterSubsystem();
   private static final PivotSubsystem m_pivot = new PivotSubsystem();
   private static final IntakeSubsystem m_intake = new IntakeSubsystem();
-  private static final LeftClimberSubsystem m_leftClimb = new LeftClimberSubsystem();
-  private static final RightClimberSubsystem m_rightClimb = new RightClimberSubsystem();
+  private static final ClimberSubsystem m_climb = new ClimberSubsystem();
   public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
 
 
@@ -75,8 +74,7 @@ public class RobotContainer {
         ));
 
 
-   //default shooterspeed
-      //  m_shooter.setDefaultCommand(new Shoot(m_shooter, 60));
+   
    
       m_driverController.a().whileTrue(drivetrain.applyRequest(() -> brake));
       m_driverController.b().whileTrue(drivetrain
@@ -93,20 +91,22 @@ public class RobotContainer {
   
     //OPERATOR BINDINGS
 
-    m_controller.button(11).toggleOnTrue(new Shoot(m_shooter, 20));
-    m_controller.button(11).toggleOnFalse(new Shoot(m_shooter, 0));
-    m_controller.button(9).onTrue(new Source(m_pivot, m_intake));
-    m_controller.button(10).onTrue(new Ground(m_pivot, m_intake));
-    m_controller.button(7).toggleOnTrue(new LoadTheShooter(m_pivot, m_intake));
-    m_controller.button(7).toggleOnFalse(new LoadTheShooter(m_pivot, m_intake));
-    m_controller.button(8).onTrue(new Amp(m_pivot, m_intake));
-    //m_controller.button(12).onTrue(new Stow(m_pivot, m_intake));
-    m_controller.button(6).whileTrue(new Climb(m_leftClimb, m_rightClimb));
+    m_controller.button(7).toggleOnTrue(new Shoot(m_shooter, 40));
+    m_controller.button(7).toggleOnFalse(new Shoot(m_shooter, 0));
+    m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
+    m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
+    m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake));
+    m_controller.button(5).onTrue(new Amp(m_pivot, m_intake));
+    m_controller.button(11).whileTrue(new Climb(m_climb));
+    m_controller.button(3).whileTrue(new Stow(m_pivot, m_intake));
     
     //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
     m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));
-    //m_leftClimb.setDefaultCommand(new ClimbStart(m_leftClimb, m_rightClimb));
+    //m_climb.setDefaultCommand(new ClimbStart(m_climb));
     
+
+    //default shooterspeed
+    //m_shooter.setDefaultCommand(new Shoot(m_shooter, 40)); //adjust to 70+ for competition
 
 
   }
@@ -114,12 +114,9 @@ public class RobotContainer {
 
   public RobotContainer() {
     configureBindings();
-
-
-
   }
 
   public Command getAutonomousCommand() {
-    return Commands.print("No autonomous command configured");
+    return new PathPlannerAuto(null);
   }
 }

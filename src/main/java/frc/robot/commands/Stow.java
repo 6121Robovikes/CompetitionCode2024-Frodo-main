@@ -14,7 +14,7 @@ public class Stow extends Command {
   IntakeSubsystem m_intake;
  
 
-  double stowPosition = 0;  
+  double stowPosition = 10;  
 
   public Stow(PivotSubsystem m_pivot, IntakeSubsystem m_intake) 
   {
@@ -35,6 +35,7 @@ public class Stow extends Command {
   public void execute() {
   
    m_pivot.setPosition(stowPosition);
+   m_intake.stopIntake();
   
   
     

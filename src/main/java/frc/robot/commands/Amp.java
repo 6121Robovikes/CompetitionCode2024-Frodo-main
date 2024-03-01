@@ -21,8 +21,7 @@ public class Amp extends Command {
     this.m_pivot = m_pivot;
     this.m_intake = m_intake;
 
-    addRequirements( m_pivot); //m_intake
-  
+    addRequirements( m_pivot, m_intake); 
 
     // Use addRequirements() here to declare subsystem dependencies.
   }

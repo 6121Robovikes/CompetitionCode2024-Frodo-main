@@ -40,12 +40,6 @@ public class IntakeSubsystem extends SubsystemBase {
 
   public void feedIn() {
 
-   // final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
-    
-    //Set speed in sooter robot container default shooter
-  //  m_intakeMotor.setControl(m_request.withVelocity(speed));
-
-
 
     //Set Voltage Output
     m_intakeMotor.setVoltage(1);  //TODO: Set Voltage for what works well with the robot
@@ -53,18 +47,12 @@ public class IntakeSubsystem extends SubsystemBase {
   }
   public void feedOut() {
 
-  //  final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
-    //m_intakeMotor.setControl(m_request.withVelocity(-2));//adjust
-
     m_intakeMotor.setVoltage(-1); //TODO: Set Voltage for what works well with the robot
   }
 
   public void ampOut() {
     
-    // final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
-    // m_intakeMotor.setControl(m_request.withVelocity(-1.5)); //adjust
-
-    m_intakeMotor.setVoltage(0);   //TODO Tune this value so that it works well with the robot.
+    m_intakeMotor.setVoltage(-.78);   //TODO Tune this value so that it works well with the robot.
 
 
   }

@@ -12,7 +12,7 @@ import com.ctre.phoenix6.signals.FeedbackSensorSourceValue;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.OperatorConstants;
 
-public class LeftClimberSubsystem extends SubsystemBase{
+public class ClimberSubsystem extends SubsystemBase{
 
     TalonFX m_leftClimb; 
 
@@ -23,7 +23,7 @@ public class LeftClimberSubsystem extends SubsystemBase{
   private final PositionVoltage m_request = new PositionVoltage(0, 0, false, 0, 0, false, false, false);
 
 
-    public LeftClimberSubsystem() {
+    public ClimberSubsystem() {
         m_leftClimb = new TalonFX(OperatorConstants.ClimberLeftMotorID, "Canivore"); 
     
     
