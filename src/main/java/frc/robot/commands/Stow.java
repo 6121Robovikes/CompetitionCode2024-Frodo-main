@@ -14,7 +14,7 @@ public class Stow extends Command {
   IntakeSubsystem m_intake;
  
 
-  double stowPosition = 10;  
+  double stowPosition = -2;  
 
   public Stow(PivotSubsystem m_pivot, IntakeSubsystem m_intake) 
   {

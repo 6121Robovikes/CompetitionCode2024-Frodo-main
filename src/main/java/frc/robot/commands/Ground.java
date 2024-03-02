@@ -15,8 +15,8 @@ public class Ground extends Command {
     PivotSubsystem m_pivot;
     IntakeSubsystem m_intake;
    
-    double groundPosition = 52; //determine this position 
-    double stowPosition = 0;
+    double groundPosition = 167; //determine this position 
+    double stowPosition = -2;
 
     
 

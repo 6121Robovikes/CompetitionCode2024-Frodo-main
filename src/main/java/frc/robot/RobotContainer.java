@@ -7,7 +7,10 @@ package frc.robot;
 import com.ctre.phoenix6.Utils;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
+import com.pathplanner.lib.path.PathPlannerPath;
 
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -53,7 +56,22 @@ public class RobotContainer {
   /* Setting up bindings for necessary control of the swerve drive platform */
   private final CommandXboxController m_driverController = new CommandXboxController(0); // My controller
 
-   // My drivetrain
+  public RobotContainer() {
+    configureBindings();
+
+    // Register Named Commands
+  NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 60));
+  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake));
+  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake));
+  NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
+  }
+
+  public Command getAutonomousCommand() {
+    return new PathPlannerAuto("Start");
+  }
+
+     
+  // My drivetrain
 
   private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
       .withDeadband(0.1).withRotationalDeadband(0.1) // Add a 10% deadband
@@ -62,6 +80,8 @@ public class RobotContainer {
   private final SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
   private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
   private final Telemetry logger = new Telemetry(MaxSpeed);
+
+
 
   private void configureBindings() {
 
@@ -91,7 +111,7 @@ public class RobotContainer {
   
     //OPERATOR BINDINGS
 
-    m_controller.button(7).toggleOnTrue(new Shoot(m_shooter, 40));
+    m_controller.button(7).toggleOnTrue(new Shoot(m_shooter, 50));
     m_controller.button(7).toggleOnFalse(new Shoot(m_shooter, 0));
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
@@ -106,17 +126,11 @@ public class RobotContainer {
     
 
     //default shooterspeed
-    //m_shooter.setDefaultCommand(new Shoot(m_shooter, 40)); //adjust to 70+ for competition
+    m_shooter.setDefaultCommand(new Shoot(m_shooter, 50)); //adjust to 70+ for competition
 
 
   }
 
 
-  public RobotContainer() {
-    configureBindings();
-  }
-
-  public Command getAutonomousCommand() {
-    return new PathPlannerAuto(null);
-  }
+  
 }

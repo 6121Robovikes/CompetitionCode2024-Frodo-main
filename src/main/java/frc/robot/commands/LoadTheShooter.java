@@ -13,7 +13,7 @@ public class LoadTheShooter extends Command {
   PivotSubsystem m_pivot;
   IntakeSubsystem m_intake;
 
-  double stowPosition = 5;
+  double stowPosition = 0;
  
   public LoadTheShooter(PivotSubsystem m_pivot, IntakeSubsystem m_intake)
   
