@@ -60,7 +60,7 @@ public class PivotSubsystem extends SubsystemBase {
   }
   public void setPosition(double position) {
     
-TrapezoidProfile.State m_setpoint = new TrapezoidProfile.State();
+  TrapezoidProfile.State m_setpoint = new TrapezoidProfile.State();
 
 // send the request to the device
     m_request.Position = m_setpoint.position;

@@ -7,18 +7,14 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ClimberSubsystem;
 
-public class ClimbStart extends Command {
-    ClimberSubsystem m_climb;
+public class ClimbStop extends Command {
+  ClimberSubsystem m_climb;
 
-
-    double extendPosition = 5;
-    double retractPosition = 0.1; //Just above retracted to prevent tension on the climber during normal operation
-  /** Creates a new ClimbStart. */
-  public ClimbStart(ClimberSubsystem m_climb) {
+  public ClimbStop(ClimberSubsystem m_climb) {
     
     this.m_climb = m_climb;
-    // Use addRequirements() here to declare subsystem dependencies.
-    
+  
+
     addRequirements(m_climb);
   }
 
@@ -29,10 +25,11 @@ public class ClimbStart extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_climb.climbExtend(extendPosition);
+
+  m_climb.climbStop();
+
 
   }
-
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}

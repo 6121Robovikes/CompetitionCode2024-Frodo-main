@@ -6,6 +6,7 @@ import com.ctre.phoenix6.controls.VelocityVoltage;
 import com.ctre.phoenix6.controls.VoltageOut;
 import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.constants.OperatorConstants;
 
 
@@ -29,7 +30,7 @@ public class IntakeSubsystem extends SubsystemBase {
      m_intakeMotor.getConfigurator().apply(slot0Configs);
 
      intakeCurrentLimits.withStatorCurrentLimitEnable(true);
-    intakeCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
+    intakeCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
     
   m_intakeMotor.getConfigurator().apply(intakeCurrentLimits);
 
@@ -52,7 +53,8 @@ public class IntakeSubsystem extends SubsystemBase {
 
   public void ampOut() {
     
-    m_intakeMotor.setVoltage(-.78);   //TODO Tune this value so that it works well with the robot.
+    
+    m_intakeMotor.setVoltage(-1);   //TODO Tune this value so that it works well with the robot.
 
 
   }

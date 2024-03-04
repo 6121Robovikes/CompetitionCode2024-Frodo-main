@@ -9,14 +9,13 @@ import com.ctre.phoenix6.controls.PositionVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.FeedbackSensorSourceValue;
 
+import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.OperatorConstants;
 
 public class ClimberSubsystem extends SubsystemBase{
 
-    TalonFX m_climb; 
-
-
+  TalonFX m_climb; 
   FeedbackConfigs climbFeedbackConfigs = new FeedbackConfigs();
   CurrentLimitsConfigs climbCurrentLimits = new CurrentLimitsConfigs();
 
@@ -49,7 +48,7 @@ public class ClimberSubsystem extends SubsystemBase{
     m_climb.getConfigurator().apply(climbFeedbackConfigs);
 
 
-    climbCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary
+    climbCurrentLimits.withStatorCurrentLimit(80); //TODO: Set Current Limit higher if necessary
     climbCurrentLimits.withStatorCurrentLimitEnable(true);
 
     m_climb.getConfigurator().apply(climbCurrentLimits);
@@ -62,15 +61,27 @@ public class ClimberSubsystem extends SubsystemBase{
 
   }
 
-  public void climbExtend(double position) {
+  public void climbExtend() {
 
-    final PositionVoltage m_request = new PositionVoltage(0).withSlot(0);
+    m_climb.setVoltage(-10);
+  }
+    //final PositionVoltage m_request = new PositionVoltage(0).withSlot(0);
+    //TrapezoidProfile.State m_setpoint = new TrapezoidProfile.State();
+    // m_request.Position = m_setpoint.position;
+    //m_request.Velocity = m_setpoint.velocity;
 
     //feedforward is realy hard math so don't do it without supervision
-    m_climb.setControl(m_request.withPosition(position).withFeedForward(0));
+    //m_climb.setControl(m_request.withPosition(position).withFeedForward(0));
 
+    public void climbRetract() {
+
+      m_climb.setVoltage(5);
 
  }
+ public void climbStop() {
+
+  m_climb.setVoltage(0);
+}
  
  public double getPosition() {
 

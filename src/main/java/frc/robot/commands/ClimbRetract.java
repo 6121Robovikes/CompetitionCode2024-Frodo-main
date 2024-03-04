@@ -5,26 +5,17 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import edu.wpi.first.wpilibj2.command.WaitCommand;
-import frc.robot.subsystems.PivotSubsystem;
+import frc.robot.subsystems.ClimberSubsystem;
 
-public class Amp extends Command {
+public class ClimbRetract extends Command {
+  ClimberSubsystem m_climb;
 
-  PivotSubsystem m_pivot;
 
-  double ampPosition = 90;
-
-  
-
-  public Amp(PivotSubsystem m_pivot) {
+  public ClimbRetract(ClimberSubsystem m_climb) {
     
-    this.m_pivot = m_pivot;
-   
+    this.m_climb = m_climb;
 
-    addRequirements( m_pivot); 
-
-    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(m_climb);
   }
 
   // Called when the command is initially scheduled.
@@ -34,9 +25,11 @@ public class Amp extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_pivot.setPosition(ampPosition); 
-   
-  } 
+
+  m_climb.climbRetract();
+
+
+  }
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}

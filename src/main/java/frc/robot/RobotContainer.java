@@ -24,8 +24,10 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Amp;
-import frc.robot.commands.Climb;
-import frc.robot.commands.ClimbStart;
+import frc.robot.commands.FeedAmp;
+import frc.robot.commands.ClimbExtend;
+import frc.robot.commands.ClimbRetract;
+import frc.robot.commands.ClimbStop;
 import frc.robot.commands.CommandSwerveDrivetrain;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.Source;
@@ -37,6 +39,7 @@ import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PivotSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.commands.FeedAmp;
 
 public class RobotContainer {
 
@@ -123,13 +126,17 @@ public class RobotContainer {
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
     m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake));
-    m_controller.button(5).onTrue(new Amp(m_pivot, m_intake));
-    m_controller.button(11).whileTrue(new Climb(m_climb));
+    m_controller.button(5).onTrue(new Amp(m_pivot));
+    m_controller.button(8).whileTrue(new FeedAmp(m_intake));
+    m_controller.button(11).whileTrue(new ClimbExtend(m_climb));
+    m_controller.button(11).onFalse(new ClimbStop(m_climb));
+    m_controller.button(12).whileTrue(new ClimbRetract(m_climb));
+    m_controller.button(12).onFalse(new ClimbStop(m_climb));
     m_controller.button(3).whileTrue(new Stow(m_pivot, m_intake));
     
     //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
     m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));
-    //m_climb.setDefaultCommand(new ClimbStart(m_climb));
+    m_climb.setDefaultCommand(new ClimbStop(m_climb));
     
 
     //default shooterspeed

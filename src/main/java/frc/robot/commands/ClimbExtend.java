@@ -7,14 +7,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ClimberSubsystem;
 
-public class Climb extends Command {
+public class ClimbExtend extends Command {
   ClimberSubsystem m_climb;
 
      
-    double extendPosition = 30;
-    double retractPosition = 0;
+  
 
-  public Climb(ClimberSubsystem m_climb) {
+  public ClimbExtend(ClimberSubsystem m_climb) {
     
     this.m_climb = m_climb;
   
@@ -30,7 +29,7 @@ public class Climb extends Command {
   @Override
   public void execute() {
 
-  m_climb.climbExtend(extendPosition);
+  m_climb.climbExtend();
 
 
   }
