@@ -13,7 +13,7 @@ public class Amp extends Command {
     PivotSubsystem m_pivot;
     IntakeSubsystem m_intake;
 
-    double ampPosition = 22.1; //determine this position 
+    double ampPosition = 85; //determine this position 
   
 
   public Amp(PivotSubsystem m_pivot, IntakeSubsystem m_intake ) 
