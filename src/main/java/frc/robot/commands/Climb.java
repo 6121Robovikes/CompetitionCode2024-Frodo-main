@@ -11,14 +11,13 @@ public class Climb extends Command {
   ClimberSubsystem m_climb;
 
      
-    double extendPosition = 10;
-    double retractPosition = 0.1;
+    double extendPosition = 30;
+    double retractPosition = 0;
 
   public Climb(ClimberSubsystem m_climb) {
     
     this.m_climb = m_climb;
-    
-
+  
 
     addRequirements(m_climb);
   }

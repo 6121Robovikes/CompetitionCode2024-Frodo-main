@@ -16,6 +16,8 @@ import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
@@ -46,7 +48,8 @@ public class RobotContainer {
   private static final IntakeSubsystem m_intake = new IntakeSubsystem();
   private static final ClimberSubsystem m_climb = new ClimberSubsystem();
   public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
-
+  private final SendableChooser<Command> autoChooser;
+ 
 
 
   //drivetrain stuff... don't mess with it
@@ -59,15 +62,20 @@ public class RobotContainer {
   public RobotContainer() {
     configureBindings();
 
+    autoChooser =AutoBuilder.buildAutoChooser();
+    SmartDashboard.putData("AutoChooser", autoChooser);
+
     // Register Named Commands
   NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 60));
   NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake));
   NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
+
+
   }
 
   public Command getAutonomousCommand() {
-    return new PathPlannerAuto("Start");
+    return autoChooser.getSelected();
   }
 
      
@@ -93,8 +101,6 @@ public class RobotContainer {
             .withRotationalRate(-m_driverController.getRightX() * MaxAngularRate) // Drive counterclockwise with negative X (left)
         ));
 
-
-   
    
       m_driverController.a().whileTrue(drivetrain.applyRequest(() -> brake));
       m_driverController.b().whileTrue(drivetrain

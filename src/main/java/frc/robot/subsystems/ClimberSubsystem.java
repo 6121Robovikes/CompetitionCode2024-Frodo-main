@@ -14,7 +14,7 @@ import frc.robot.constants.OperatorConstants;
 
 public class ClimberSubsystem extends SubsystemBase{
 
-    TalonFX m_leftClimb; 
+    TalonFX m_climb; 
 
 
   FeedbackConfigs climbFeedbackConfigs = new FeedbackConfigs();
@@ -24,10 +24,10 @@ public class ClimberSubsystem extends SubsystemBase{
 
 
     public ClimberSubsystem() {
-        m_leftClimb = new TalonFX(OperatorConstants.ClimberLeftMotorID, "Canivore"); 
+        m_climb = new TalonFX(OperatorConstants.ClimberMotorID, "Canivore"); 
     
     
-        m_leftClimb.setInverted(false);
+        m_climb.setInverted(false);
 
 
 
@@ -41,18 +41,18 @@ public class ClimberSubsystem extends SubsystemBase{
     slot0Configs.kI = 0; // no output for integrated error
     slot0Configs.kD = 0.1; // A velocity error of 1 rps results in 0.1 V output
 
-    m_leftClimb.getConfigurator().apply(slot0Configs);
+    m_climb.getConfigurator().apply(slot0Configs);
   
 
     climbFeedbackConfigs.withFeedbackSensorSource(FeedbackSensorSourceValue.RotorSensor);
     
-    m_leftClimb.getConfigurator().apply(climbFeedbackConfigs);
+    m_climb.getConfigurator().apply(climbFeedbackConfigs);
 
 
     climbCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary
     climbCurrentLimits.withStatorCurrentLimitEnable(true);
 
-    m_leftClimb.getConfigurator().apply(climbCurrentLimits);
+    m_climb.getConfigurator().apply(climbCurrentLimits);
   
 
   }
@@ -67,15 +67,15 @@ public class ClimberSubsystem extends SubsystemBase{
     final PositionVoltage m_request = new PositionVoltage(0).withSlot(0);
 
     //feedforward is realy hard math so don't do it without supervision
-    m_leftClimb.setControl(m_request.withPosition(position).withFeedForward(0));
+    m_climb.setControl(m_request.withPosition(position).withFeedForward(0));
 
 
  }
  
  public double getPosition() {
 
-    System.out.println("left climb Position"+ m_leftClimb.getRotorPosition());
-    return m_leftClimb.getRotorPosition().getValueAsDouble();
+    System.out.println("climb Position"+ m_climb.getRotorPosition());
+    return m_climb.getRotorPosition().getValueAsDouble();
  }
 
   public void stop(){
