@@ -55,31 +55,53 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
     }
     public CommandSwerveDrivetrain(SwerveDrivetrainConstants driveTrainConstants, SwerveModuleConstants... modules) {
         super(driveTrainConstants, modules);
-        configurePathPlanner();
+       configurePathPlanner();
         if (Utils.isSimulation()) {
             startSimThread();
         }
     }
 
     private void configurePathPlanner() {
-        double driveBaseRadius = 0;
-        for (var moduleLocation : m_moduleLocations) {
-            driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
-        }
+        double driveBaseRadius = .867;
+         for (var moduleLocation : m_moduleLocations) {
+                driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
+           }
 
-        AutoBuilder.configureHolonomic(
+   
+   //Code from pathplanner example
+           // AutoBuilder.configureHolonomic(
+   //     this::getPose,
+    //    this::resetPose,
+    //    this::getSpeeds,
+    //    this::driveRobotRelative,
+    //    constants.TunerConstants.pathFollowerConfig,
+    //    () -> {
+    //
+    //          var alliance = DriverStation.getAlliance();
+    //        if (alliance.isPresent()) {
+    //          return alliance.get() == DriverStation.Alliance.Red;
+    //     }
+    //       return false;
+    //   },
+    //   this
+    //);
+
+  
+//code from Phoenix 6 w/pathplanner example
+       AutoBuilder.configureHolonomic(
             ()->this.getState().Pose, // Supplier of current robot pose
             this::seedFieldRelative,  // Consumer for seeding pose against auto
             this::getCurrentRobotChassisSpeeds,
-            (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
-            new HolonomicPathFollowerConfig(new PIDConstants(3, 0, 0),
+          (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
+           new HolonomicPathFollowerConfig(new PIDConstants(3, 0, 0),
                                             new PIDConstants(100, 0, 0.2),
                                             TunerConstants.kSpeedAt12VoltsMps,
                                             driveBaseRadius,
-                                            new ReplanningConfig()),
-            ()->false, // Change this if the path needs to be flipped on red vs blue
-            this); // Subsystem for requirements
+                                           new ReplanningConfig()),
+           ()->false, // Change this if the path needs to be flipped on red vs blue
+           this); // Subsystem for requirements
     }
+    
 
 
 

@@ -123,8 +123,8 @@ public class RobotContainer {
   
     //OPERATOR BINDINGS
 
-    m_controller.button(7).toggleOnTrue(new Shoot(m_shooter, 80));
-    m_controller.button(7).toggleOnFalse(new Shoot(m_shooter, 0));
+    m_controller.button(7).whileTrue(new Shoot(m_shooter, 0));
+    //m_controller.button(7).onFalse(new Shoot(m_shooter, 65));
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
     m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake));
@@ -142,7 +142,7 @@ public class RobotContainer {
     
 
     //default shooterspeed
-    m_shooter.setDefaultCommand(new Shoot(m_shooter, 80)); //adjust to 70+ for competition
+    m_shooter.setDefaultCommand(new Shoot(m_shooter, 65)); //adjust to 70+ for competition
 
 
   }
