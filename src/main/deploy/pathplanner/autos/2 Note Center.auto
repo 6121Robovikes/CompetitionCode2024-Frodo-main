@@ -18,21 +18,22 @@
           }
         },
         {
-          "type": "named",
+          "type": "sequential",
           "data": {
-            "name": "Ground"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Example Path"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Load"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Ground"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Example Path"
+                }
+              }
+            ]
           }
         }
       ]
