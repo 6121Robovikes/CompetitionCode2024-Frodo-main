@@ -43,18 +43,18 @@ public class IntakeSubsystem extends SubsystemBase {
 
 
     //Set Voltage Output
-    m_intakeMotor.setVoltage(3);  //TODO: Set Voltage for what works well with the robot
+    m_intakeMotor.setVoltage(25);  
   
   }
   public void feedOut() {
 
-    m_intakeMotor.setVoltage(-1.5); //TODO: Set Voltage for what works well with the robot
+    m_intakeMotor.setVoltage(-20); 
   }
 
   public void ampOut() {
     
     
-    m_intakeMotor.setVoltage(-1);   //TODO Tune this value so that it works well with the robot.
+    m_intakeMotor.setVoltage(-5);
 
 
   }

@@ -63,16 +63,18 @@ public class RobotContainer {
   private final CommandXboxController m_driverController = new CommandXboxController(0); // My controller
 
   public RobotContainer() {
-    configureBindings();
-
-    autoChooser =AutoBuilder.buildAutoChooser();
-    SmartDashboard.putData("AutoChooser", autoChooser);
-
-    // Register Named Commands
-  NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 60));
+    
+     // Register Named Commands
+  NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 80));
   NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake));
   NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
+    
+    configureBindings();
+    autoChooser =AutoBuilder.buildAutoChooser();
+    SmartDashboard.putData("AutoChooser", autoChooser);
+
+  
 
 
   }
@@ -121,7 +123,7 @@ public class RobotContainer {
   
     //OPERATOR BINDINGS
 
-    m_controller.button(7).toggleOnTrue(new Shoot(m_shooter, 50));
+    m_controller.button(7).toggleOnTrue(new Shoot(m_shooter, 80));
     m_controller.button(7).toggleOnFalse(new Shoot(m_shooter, 0));
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
@@ -140,7 +142,7 @@ public class RobotContainer {
     
 
     //default shooterspeed
-    m_shooter.setDefaultCommand(new Shoot(m_shooter, 50)); //adjust to 70+ for competition
+    m_shooter.setDefaultCommand(new Shoot(m_shooter, 80)); //adjust to 70+ for competition
 
 
   }

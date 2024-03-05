@@ -65,13 +65,6 @@ public class ClimberSubsystem extends SubsystemBase{
 
     m_climb.setVoltage(-10);
   }
-    //final PositionVoltage m_request = new PositionVoltage(0).withSlot(0);
-    //TrapezoidProfile.State m_setpoint = new TrapezoidProfile.State();
-    // m_request.Position = m_setpoint.position;
-    //m_request.Velocity = m_setpoint.velocity;
-
-    //feedforward is realy hard math so don't do it without supervision
-    //m_climb.setControl(m_request.withPosition(position).withFeedForward(0));
 
     public void climbRetract() {
 
