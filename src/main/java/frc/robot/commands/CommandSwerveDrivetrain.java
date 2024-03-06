@@ -88,7 +88,7 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
 
     }
     private void configurePathPlanner() {
-            double driveBaseRadius = .867;
+            double driveBaseRadius = 0;
              for (var moduleLocation : m_moduleLocations) {
                     driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
                }
@@ -104,7 +104,8 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
                                     TunerConstants.kSpeedAt12VoltsMps,
                                     driveBaseRadius,
                                    new ReplanningConfig()),
-        ()->false, // Change this if the path needs to be flipped on red vs blue
+        
+       ()->DriverStation.getAlliance().orElse(Alliance.Blue)==Alliance.Red, //Assume the path needs to be flipped for Red vs. Blue, this is normally the case
         this); // Subsystem for requirements
             
 
