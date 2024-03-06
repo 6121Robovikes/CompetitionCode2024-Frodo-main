@@ -12,7 +12,7 @@ import frc.robot.constants.OperatorConstants;
 
 public class IntakeSubsystem extends SubsystemBase {
   TalonFX m_intakeMotor; 
-  VoltageOut m_request = new VoltageOut(0);
+  //VoltageOut m_request = new VoltageOut(0);
 
   CurrentLimitsConfigs intakeCurrentLimits = new CurrentLimitsConfigs();
 
@@ -30,7 +30,7 @@ public class IntakeSubsystem extends SubsystemBase {
      m_intakeMotor.getConfigurator().apply(slot0Configs);
 
      intakeCurrentLimits.withStatorCurrentLimitEnable(true);
-    intakeCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
+    intakeCurrentLimits.withStatorCurrentLimit(80); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
     
   m_intakeMotor.getConfigurator().apply(intakeCurrentLimits);
 
@@ -50,10 +50,14 @@ public class IntakeSubsystem extends SubsystemBase {
     m_intakeMotor.setVoltage(-60); 
   }
 
-  public void ampOut() {
+  public void ampOut(double speed) {
+
+    final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
+
+    m_intakeMotor.setControl(m_request.withVelocity(speed));
     
-    
-    m_intakeMotor.setVoltage(-35);
+    //m_intakeMotor.setInverted(true);
+    //m_intakeMotor.setVoltage(75);
 
 
   }

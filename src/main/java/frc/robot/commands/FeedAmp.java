@@ -12,11 +12,11 @@ import frc.robot.subsystems.IntakeSubsystem;
 
 public class FeedAmp extends Command {
 
-  IntakeSubsystem m_intake;
-      
+  IntakeSubsystem m_intake;   
+  double speed;
 
-  public FeedAmp(IntakeSubsystem m_intake ) {
-   
+  public FeedAmp(IntakeSubsystem m_intake, double speed ) {
+    this. speed = speed;
     this.m_intake = m_intake;
 
     addRequirements(m_intake); 
@@ -31,7 +31,7 @@ public class FeedAmp extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_intake.ampOut();
+    m_intake.ampOut(speed);
   } 
   // Called once the command ends or is interrupted.
   @Override
