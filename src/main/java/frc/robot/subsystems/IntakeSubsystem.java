@@ -47,13 +47,13 @@ public class IntakeSubsystem extends SubsystemBase {
   }
   public void feedOut() {
 
-    m_intakeMotor.setVoltage(-50); 
+    m_intakeMotor.setVoltage(-60); 
   }
 
   public void ampOut() {
     
     
-    m_intakeMotor.setVoltage(-10);
+    m_intakeMotor.setVoltage(-35);
 
 
   }

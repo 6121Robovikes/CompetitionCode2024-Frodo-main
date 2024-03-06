@@ -61,7 +61,26 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
         }
     }
 
+    private void configurePathPlanner() {
+        double driveBaseRadius = 0;
+         for (var moduleLocation : m_moduleLocations) {
+                driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
+           }
 
+    //code from Phoenix 6 w/pathplanner example
+ AutoBuilder.configureHolonomic(
+    ()->this.getState().Pose, // Supplier of current robot pose
+   this::seedFieldRelative,  // Consumer for seeding pose against auto
+   this::getCurrentRobotChassisSpeeds,
+   (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
+    new HolonomicPathFollowerConfig(new PIDConstants(1, 0, 0),
+                                new PIDConstants(1, 0, 0.2),
+                                TunerConstants.kSpeedAt12VoltsMps,
+                                driveBaseRadius,
+                               new ReplanningConfig()),
+   ()->DriverStation.getAlliance().orElse(Alliance.Blue)==Alliance.Red, //Assume the path needs to be flipped for Red vs. Blue, this is normally the case
+    this); // Subsystem for requirements       
+}
     
 
     public Command applyRequest(Supplier<SwerveRequest> requestSupplier) {
@@ -87,29 +106,7 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
         m_simNotifier.startPeriodic(kSimLoopPeriod);
 
     }
-    private void configurePathPlanner() {
-            double driveBaseRadius = 0;
-             for (var moduleLocation : m_moduleLocations) {
-                    driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
-               }
 
-        //code from Phoenix 6 w/pathplanner example
-     AutoBuilder.configureHolonomic(
-        ()->this.getState().Pose, // Supplier of current robot pose
-       this::seedFieldRelative,  // Consumer for seeding pose against auto
-       this::getCurrentRobotChassisSpeeds,
-       (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
-        new HolonomicPathFollowerConfig(new PIDConstants(0, 0, 0),
-                                    new PIDConstants(0, 0, 0.2),
-                                    TunerConstants.kSpeedAt12VoltsMps,
-                                    driveBaseRadius,
-                                   new ReplanningConfig()),
-        
-       ()->DriverStation.getAlliance().orElse(Alliance.Blue)==Alliance.Red, //Assume the path needs to be flipped for Red vs. Blue, this is normally the case
-        this); // Subsystem for requirements
-            
-
-    }
 
      @Override
     public void periodic() {
