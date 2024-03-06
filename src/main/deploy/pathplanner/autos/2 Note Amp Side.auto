@@ -6,9 +6,9 @@
     "data": {
       "commands": [
         {
-          "type": "wait",
+          "type": "path",
           "data": {
-            "waitTime": 1.0
+            "pathName": "Amp side to Shoot"
           }
         },
         {
@@ -18,7 +18,7 @@
           }
         },
         {
-          "type": "parallel",
+          "type": "sequential",
           "data": {
             "commands": [
               {
@@ -30,21 +30,34 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Straight back"
+                  "pathName": "Pick up amp note"
                 }
               }
             ]
           }
         },
         {
-          "type": "named",
+          "type": "sequential",
           "data": {
-            "name": "Load"
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Soot amp note 2"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Load"
+                }
+              }
+            ]
           }
         }
       ]
     }
   },
-  "folder": "New Folder",
+  "folder": null,
   "choreoAuto": false
 }

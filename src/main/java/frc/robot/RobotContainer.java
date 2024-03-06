@@ -65,9 +65,9 @@ public class RobotContainer {
   public RobotContainer() {
     
      // Register Named Commands
-  NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 80));
-  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake));
-  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake));
+  NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 70));
+  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(1));
+  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(5));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
     
     configureBindings();
@@ -126,7 +126,7 @@ public class RobotContainer {
     //m_controller.button(7).onFalse(new Shoot(m_shooter, 65));
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
-    m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake));
+    m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake).withTimeout(1));
     m_controller.button(5).onTrue(new Amp(m_pivot));
     m_controller.button(8).whileTrue(new FeedAmp(m_intake));
     m_controller.button(11).whileTrue(new ClimbExtend(m_climb));

@@ -12,7 +12,7 @@ import frc.robot.constants.OperatorConstants;
 
 public class IntakeSubsystem extends SubsystemBase {
   TalonFX m_intakeMotor; 
- VoltageOut m_request = new VoltageOut(0);
+  VoltageOut m_request = new VoltageOut(0);
 
   CurrentLimitsConfigs intakeCurrentLimits = new CurrentLimitsConfigs();
 
@@ -41,14 +41,13 @@ public class IntakeSubsystem extends SubsystemBase {
 
   public void feedIn() {
 
-
     //Set Voltage Output
     m_intakeMotor.setVoltage(25);  
   
   }
   public void feedOut() {
 
-    m_intakeMotor.setVoltage(-35); 
+    m_intakeMotor.setVoltage(-50); 
   }
 
   public void ampOut() {
@@ -68,4 +67,8 @@ public boolean exampleCondition() {
     // Query some boolean state, such as a digital sensor.
     return false;
   }
+public void getVoltage() {
+  
+  m_intakeMotor.getMotorVoltage();
+}
 }

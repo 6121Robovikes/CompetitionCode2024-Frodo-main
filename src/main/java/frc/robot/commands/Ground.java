@@ -4,6 +4,8 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.units.Voltage;
+
 //import java.lang.invoke.ClassSpecializer.SpeciesData;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -53,7 +55,9 @@ public class Ground extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-
+    //m_intake.getVoltage();
+    //while (Voltage =0){
     return false;
-  }
+  } 
+
 }
