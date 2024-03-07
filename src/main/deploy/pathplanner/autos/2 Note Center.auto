@@ -62,6 +62,31 @@
           }
         },
         {
+          "type": "sequential",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Center Note 2 to Shoot"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Load"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 2.0
+                }
+              }
+            ]
+          }
+        },
+        {
           "type": "wait",
           "data": {
             "waitTime": 1.0

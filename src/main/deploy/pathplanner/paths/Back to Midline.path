@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.34,
-        "y": 4.25
+        "x": 1.6495379144604458,
+        "y": 4.588128407026045
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.1956585451632455,
-        "y": 2.34833238897247
+        "x": 0.5051964596236915,
+        "y": 2.686460795998515
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Source Note 2"
     },
     {
       "anchor": {
