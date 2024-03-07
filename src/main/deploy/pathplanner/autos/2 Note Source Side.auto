@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.21,
-      "y": 6.44
+      "x": 1.17,
+      "y": 4.66
     },
-    "rotation": 31.24
+    "rotation": -33.0956225034082
   },
   "command": {
     "type": "sequential",
@@ -14,7 +14,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 1.0
+            "waitTime": 2.0
           }
         },
         {
@@ -34,15 +34,28 @@
           "data": {
             "commands": [
               {
+                "type": "path",
+                "data": {
+                  "pathName": "Second Note Pickup"
+                }
+              },
+              {
                 "type": "named",
                 "data": {
                   "name": "Ground"
                 }
-              },
+              }
+            ]
+          }
+        },
+        {
+          "type": "sequential",
+          "data": {
+            "commands": [
               {
-                "type": "path",
+                "type": "named",
                 "data": {
-                  "pathName": "Pick up amp note"
+                  "name": "Load"
                 }
               },
               {
@@ -55,34 +68,9 @@
           }
         },
         {
-          "type": "sequential",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Shoot amp note 2"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Load"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 3.0
-                }
-              }
-            ]
-          }
-        },
-        {
           "type": "path",
           "data": {
-            "pathName": "Backup to Midline"
+            "pathName": "Back to Midline"
           }
         }
       ]
