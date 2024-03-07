@@ -64,8 +64,7 @@ public class RobotContainer {
 
   public RobotContainer() {
     
-     // Register Named Commands
-  NamedCommands.registerCommand("Shoot", new Shoot(m_shooter, 70));
+  // Register Named Commands
   NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(3));
   NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(5));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
@@ -123,7 +122,6 @@ public class RobotContainer {
     //OPERATOR BINDINGS
 
     m_controller.button(7).whileTrue(new Shoot(m_shooter, 0));
-    //m_controller.button(7).onFalse(new Shoot(m_shooter, 65));
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
     m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake).withTimeout(5));

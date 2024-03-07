@@ -50,14 +50,9 @@ public class IntakeSubsystem extends SubsystemBase {
     m_intakeMotor.setVoltage(-60); 
   }
 
-  public void ampOut(double speed) {
+  public void ampOut() {
 
-    final VelocityVoltage m_request = new VelocityVoltage(0).withSlot(0);
-
-    m_intakeMotor.setControl(m_request.withVelocity(speed));
-    
-    //m_intakeMotor.setInverted(true);
-    //m_intakeMotor.setVoltage(75);
+  m_intakeMotor.setVoltage(-75);
 
 
   }
