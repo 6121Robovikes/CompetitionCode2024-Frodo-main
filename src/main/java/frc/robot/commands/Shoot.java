@@ -14,7 +14,7 @@ public class Shoot extends Command {
   double speed;
 
   public Shoot(ShooterSubsystem m_shooter, double speed) {
-       this.speed = speed;
+    
        this.m_shooter = m_shooter;
 
         addRequirements(m_shooter);

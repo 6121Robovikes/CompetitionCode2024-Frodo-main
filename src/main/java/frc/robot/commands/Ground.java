@@ -19,6 +19,7 @@ public class Ground extends Command {
    
     double groundPosition = 180; //determine this position 
     double stowPosition = -2;
+    double speed;
 
     
 

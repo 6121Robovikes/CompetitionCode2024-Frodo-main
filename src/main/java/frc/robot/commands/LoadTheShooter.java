@@ -14,6 +14,7 @@ public class LoadTheShooter extends Command {
   IntakeSubsystem m_intake;
 
   double stowPosition = 0;
+  double speed;
  
   public LoadTheShooter(PivotSubsystem m_pivot, IntakeSubsystem m_intake)
   

@@ -13,8 +13,8 @@ public class FeedAmp extends Command {
   IntakeSubsystem m_intake;   
   double speed;
 
-  public FeedAmp(IntakeSubsystem m_intake, double speed ) {
-    this. speed = speed;
+  public FeedAmp(IntakeSubsystem m_intake) {
+   
     this.m_intake = m_intake;
 
     addRequirements(m_intake); 
