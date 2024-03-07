@@ -30,7 +30,7 @@ public class IntakeSubsystem extends SubsystemBase {
      m_intakeMotor.getConfigurator().apply(slot0Configs);
 
     intakeCurrentLimits.withStatorCurrentLimitEnable(true);
-    intakeCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
+    intakeCurrentLimits.withStatorCurrentLimit(40); //TODO: Set Current Limit higher if necessary, probably fine at 40Amps
     
     m_intakeMotor.getConfigurator().apply(intakeCurrentLimits);
 
@@ -43,21 +43,21 @@ public class IntakeSubsystem extends SubsystemBase {
 
     
     //Set Voltage Output
-    m_intakeMotor.setVoltage(25);  
+    m_intakeMotor.setVoltage(10);  
 
    }
   
   public void feedOut() {
 
- 
+
     
-    m_intakeMotor.setVoltage(-20); 
+    m_intakeMotor.setVoltage(-10); 
   }
 
   public void ampOut() {
 
 
-      m_intakeMotor.setVoltage(-30);
+      m_intakeMotor.setVoltage(-2);
 
 
   }

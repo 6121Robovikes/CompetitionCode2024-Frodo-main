@@ -13,7 +13,7 @@ public class Amp extends Command {
 
   PivotSubsystem m_pivot;
 
-  double ampPosition = 90;
+  double ampPosition = 80;
 
   
 
@@ -22,7 +22,7 @@ public class Amp extends Command {
     this.m_pivot = m_pivot;
    
 
-    addRequirements( m_pivot); 
+    addRequirements(m_pivot); 
 
     // Use addRequirements() here to declare subsystem dependencies.
   }

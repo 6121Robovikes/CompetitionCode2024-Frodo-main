@@ -35,7 +35,7 @@ public class Source extends Command {
   public void execute() {
   
    m_pivot.setPosition(sourcePosition);
-   m_intake.feedIn();
+   //m_intake.feedIn();
     
   }
 

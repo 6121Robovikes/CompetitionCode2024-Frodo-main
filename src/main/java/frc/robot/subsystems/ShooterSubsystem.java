@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix6.configs.Slot0Configs;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.controls.VelocityVoltage;
+import com.ctre.phoenix6.controls.VoltageOut;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -15,7 +16,7 @@ import frc.robot.constants.OperatorConstants;
 public class ShooterSubsystem extends SubsystemBase {
  TalonFX m_leftShooterMotor; 
  TalonFX m_rightShooterMotor;
- //VoltageOut m_request = new VoltageOut(0);
+ VoltageOut m_request = new VoltageOut(0);
 
   
   public ShooterSubsystem() {
