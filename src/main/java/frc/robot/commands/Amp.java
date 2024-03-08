@@ -13,7 +13,7 @@ public class Amp extends Command {
 
   PivotSubsystem m_pivot;
 
-  double ampPosition = 80;
+  double ampPosition = 75;
 
   
 

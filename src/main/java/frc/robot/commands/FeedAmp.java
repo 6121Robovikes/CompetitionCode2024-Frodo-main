@@ -6,18 +6,21 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.PivotSubsystem;
 
 
 public class FeedAmp extends Command {
 
-  IntakeSubsystem m_intake;   
+  IntakeSubsystem m_intake;
+  PivotSubsystem m_pivot;   
   double speed;
+  double ampPosition = 72;
 
-  public FeedAmp(IntakeSubsystem m_intake) {
+  public FeedAmp(IntakeSubsystem m_intake, PivotSubsystem m_pivot) {
    
     this.m_intake = m_intake;
-
-    addRequirements(m_intake); 
+    this.m_pivot = m_pivot;
+    addRequirements(m_intake, m_pivot); 
 
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -29,8 +32,11 @@ public class FeedAmp extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+
     m_intake.ampOut();
-  } 
+    m_pivot.setPosition(ampPosition); 
+  }
+
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}
