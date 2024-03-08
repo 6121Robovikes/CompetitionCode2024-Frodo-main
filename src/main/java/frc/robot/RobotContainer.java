@@ -125,7 +125,6 @@ public class RobotContainer {
     m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
     m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake).withTimeout(5));
-    m_controller.button(5).onTrue(new Amp(m_pivot));
     m_controller.button(8).onTrue(new FeedAmp(m_intake, m_pivot).withTimeout(3));
     m_controller.button(11).whileTrue(new ClimbExtend(m_climb));
     m_controller.button(11).onFalse(new ClimbStop(m_climb));
