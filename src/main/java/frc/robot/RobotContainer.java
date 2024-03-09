@@ -49,10 +49,10 @@ public class RobotContainer {
   private static final PivotSubsystem m_pivot = new PivotSubsystem();
   private static final IntakeSubsystem m_intake = new IntakeSubsystem();
   private static final ClimberSubsystem m_climb = new ClimberSubsystem();
-  public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
-  //private final SendableChooser<Command> autoChooser;
+  public static final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
+  private final SendableChooser<Command> autoChooser;
  
-  private Command runAuto = drivetrain.getAutoPath("Stay Still and Shoot");
+  //private Command runAuto = drivetrain.getAutoPath("Stay Still and Shoot");
 
   //drivetrain stuff... don't mess with it
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
@@ -64,22 +64,23 @@ public class RobotContainer {
   public RobotContainer() {
     
   // Register Named Commands
-  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(1));
+  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(3));
   NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(4));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
 
   
     
     configureBindings();
-   // autoChooser =AutoBuilder.buildAutoChooser();
-   // SmartDashboard.putData("autoChooser", autoChooser);
-  //}
+   autoChooser =AutoBuilder.buildAutoChooser();
+   SmartDashboard.putData("autoChooser", autoChooser);
+  }
 
-  //public Command getAutonomousCommand() {
-   // return autoChooser.getSelected();
+  public Command getAutonomousCommand() {
+    return autoChooser.getSelected();
+
 
    
- }
+  }
 
 
 
@@ -153,9 +154,10 @@ public class RobotContainer {
             .withRotationalRate(rotation)); // Drive counterclockwise with negative X (left)
 
   }
+}
 
-  public Command getAutonomousCommand() {
+  //public Command getAutonomousCommand() {
     /* First put the drivetrain into auto run mode, then run the auto */
-    return runAuto;
-}
-}
+    //return runAuto;
+
+

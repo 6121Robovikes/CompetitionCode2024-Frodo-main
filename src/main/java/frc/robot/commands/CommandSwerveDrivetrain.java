@@ -11,6 +11,7 @@ import java.util.function.Supplier;
 import com.ctre.phoenix6.Utils;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveDrivetrain;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveDrivetrainConstants;
+import com.ctre.phoenix6.mechanisms.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveModuleConstants;
 import com.ctre.phoenix6.mechanisms.swerve.SwerveRequest;
 import com.pathplanner.lib.auto.AutoBuilder;
@@ -26,6 +27,7 @@ import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.Notifier;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.RobotContainer;
 import frc.robot.constants.TunerConstants;
 
 /**
@@ -68,11 +70,21 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
             driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
         }
 
+       final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
+      .withDriveRequestType(DriveRequestType.OpenLoopVoltage); // I want field-centric
+                                                               // driving in open loop
+
         AutoBuilder.configureHolonomic(
             ()->this.getState().Pose, // Supplier of current robot pose
             this::seedFieldRelative,  // Consumer for seeding pose against auto
             this::getCurrentRobotChassisSpeeds,
-            (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
+            // (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
+            (speed) -> {RobotContainer.drivetrain.applyRequest(() ->
+                drive.withVelocityX(speed.vxMetersPerSecond) // Drive forward with
+                                                                                           // negative Y (forward)
+            .withVelocityY(speed.vyMetersPerSecond) // Drive left with negative X (left)
+            .withRotationalRate(speed.omegaRadiansPerSecond) // Drive counterclockwise with negative X (left)
+            );},
             new HolonomicPathFollowerConfig(new PIDConstants(0, 0, 0),
                                             new PIDConstants(0, 0, 0),//numbers to match team that has theirs working
                                             TunerConstants.kSpeedAt12VoltsMps,
