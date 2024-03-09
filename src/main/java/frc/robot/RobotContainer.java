@@ -52,7 +52,7 @@ public class RobotContainer {
   public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
   //private final SendableChooser<Command> autoChooser;
  
-  private Command runAuto = drivetrain.getAutoPath("Movement Only");
+  private Command runAuto = drivetrain.getAutoPath("Stay Still and Shoot");
 
   //drivetrain stuff... don't mess with it
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
