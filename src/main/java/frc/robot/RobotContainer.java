@@ -64,23 +64,21 @@ public class RobotContainer {
   public RobotContainer() {
     
   // Register Named Commands
-  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(3));
-  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(5));
+  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(1));
+  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(4));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
     
     configureBindings();
     autoChooser =AutoBuilder.buildAutoChooser();
     SmartDashboard.putData("autoChooser", autoChooser);
-
-
-
   }
 
   public Command getAutonomousCommand() {
     return autoChooser.getSelected();
   }
 
-     
+
+
   // My drivetrain
 
   private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
@@ -90,6 +88,9 @@ public class RobotContainer {
   private final SwerveRequest.SwerveDriveBrake brake = new SwerveRequest.SwerveDriveBrake();
   private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
   
+
+  private Command runAuto = drivetrain.getAutoPath("Tests");
+
   private final Telemetry logger = new Telemetry(MaxSpeed);
 
 
@@ -149,7 +150,6 @@ public class RobotContainer {
             .withRotationalRate(rotation)); // Drive counterclockwise with negative X (left)
 
   }
-  public void shoot(double speed){
-    m_shooter.shoot(speed);
-  }
+
+  
 }
