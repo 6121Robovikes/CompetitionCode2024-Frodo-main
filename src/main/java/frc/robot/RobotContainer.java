@@ -23,7 +23,6 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import frc.robot.commands.Amp;
 import frc.robot.commands.FeedAmp;
 import frc.robot.commands.ClimbExtend;
 import frc.robot.commands.ClimbRetract;
@@ -122,7 +121,7 @@ public class RobotContainer {
     //OPERATOR BINDINGS
 
     m_controller.button(7).whileTrue(new Shoot(m_shooter, 0));
-    m_controller.button(6).onTrue(new Source(m_pivot, m_intake));
+    m_controller.button(5).onTrue(new Source(m_pivot, m_intake));
     m_controller.button(2).onTrue(new Ground(m_pivot, m_intake));
     m_controller.button(1).onTrue(new LoadTheShooter(m_pivot, m_intake).withTimeout(5));
     m_controller.button(8).onTrue(new FeedAmp(m_intake, m_pivot).withTimeout(3));
@@ -143,6 +142,14 @@ public class RobotContainer {
 
   }
 
+  public void autoDrive(double xSpeed, double ySpeed, double rotation){
+    drivetrain.applyRequest(() -> drive.withVelocityX(xSpeed) // Drive forward with
+                                                                                           // negative Y (forward)
+            .withVelocityY(ySpeed) // Drive left with negative X (left)
+            .withRotationalRate(rotation)); // Drive counterclockwise with negative X (left)
 
-  
+  }
+  public void shoot(double speed){
+    m_shooter.shoot(speed);
+  }
 }

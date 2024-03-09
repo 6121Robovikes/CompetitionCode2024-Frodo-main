@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -22,6 +23,8 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
   private PivotSubsystem m_PivotSubsystem = new PivotSubsystem();
+
+  private Timer autoTimer = new Timer();
   
 
   /**
@@ -67,11 +70,23 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
+    autoTimer.reset();
+    autoTimer.start();
+
   }
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    // if(autoTimer.get() < 1){
+    //  m_robotContainer.autoDrive(4.0, 4.0, 0.0);
+    //}else if(autoTimer.get() < 2){
+    // m_robotContainer.autoDrive(0.0, 0.0, 0.0);
+    // m_robotContainer.shoot(0);
+    //}else if(autoTimer.get() < 3){
+      //add other stuff
+    //}
+  }
 
   @Override
   public void teleopInit() {

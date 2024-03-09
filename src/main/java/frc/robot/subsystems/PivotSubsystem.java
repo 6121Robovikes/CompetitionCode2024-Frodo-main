@@ -51,7 +51,7 @@ public class PivotSubsystem extends SubsystemBase {
     
     m_pivotMotor.getConfigurator().apply(pivotFeedbackConfigs);
 
-    pivotCurrentLimits.withStatorCurrentLimit(60); //TODO: Set Current Limit higher if necessary
+    pivotCurrentLimits.withStatorCurrentLimit(65); //TODO: Set Current Limit higher if necessary
     pivotCurrentLimits.withStatorCurrentLimitEnable(true);
 
     m_pivotMotor.getConfigurator().apply(pivotCurrentLimits);
@@ -72,7 +72,7 @@ public class PivotSubsystem extends SubsystemBase {
 
    public void pivotDiagnostics(){
     
-    System.out.println("Current Pivot Error From Setpoint: " + m_pivotMotor.getClosedLoopError());
+    //System.out.println("Current Pivot Error From Setpoint: " + m_pivotMotor.getClosedLoopError());
    }
    
   
