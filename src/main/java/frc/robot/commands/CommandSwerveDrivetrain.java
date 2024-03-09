@@ -83,7 +83,7 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
     }
        
 //added Saturday Morning to match Path Planner, does this cancel out the chooser on smart dashboard?
-    public Command getAutoPath(String pathName) {
+   public Command getAutoPath(String pathName) {
     return new PathPlannerAuto(pathName);
 }
 

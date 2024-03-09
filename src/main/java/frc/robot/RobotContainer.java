@@ -50,9 +50,9 @@ public class RobotContainer {
   private static final IntakeSubsystem m_intake = new IntakeSubsystem();
   private static final ClimberSubsystem m_climb = new ClimberSubsystem();
   public final CommandSwerveDrivetrain drivetrain = TunerConstants.DriveTrain;
-  private final SendableChooser<Command> autoChooser;
+  //private final SendableChooser<Command> autoChooser;
  
-
+  private Command runAuto = drivetrain.getAutoPath("Movement Only");
 
   //drivetrain stuff... don't mess with it
   private double MaxSpeed = TunerConstants.kSpeedAt12VoltsMps; // kSpeedAt12VoltsMps desired top speed
@@ -67,15 +67,19 @@ public class RobotContainer {
   NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(1));
   NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(4));
   NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
+
+  
     
     configureBindings();
-    autoChooser =AutoBuilder.buildAutoChooser();
-    SmartDashboard.putData("autoChooser", autoChooser);
-  }
+   // autoChooser =AutoBuilder.buildAutoChooser();
+   // SmartDashboard.putData("autoChooser", autoChooser);
+  //}
 
-  public Command getAutonomousCommand() {
-    return autoChooser.getSelected();
-  }
+  //public Command getAutonomousCommand() {
+   // return autoChooser.getSelected();
+
+   
+ }
 
 
 
@@ -89,7 +93,6 @@ public class RobotContainer {
   private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
   
 
-  private Command runAuto = drivetrain.getAutoPath("Tests");
 
   private final Telemetry logger = new Telemetry(MaxSpeed);
 
@@ -151,5 +154,8 @@ public class RobotContainer {
 
   }
 
-  
+  public Command getAutonomousCommand() {
+    /* First put the drivetrain into auto run mode, then run the auto */
+    return runAuto;
+}
 }

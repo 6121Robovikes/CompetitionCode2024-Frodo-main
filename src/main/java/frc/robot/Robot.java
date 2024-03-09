@@ -78,15 +78,15 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousPeriodic() {
-    // if(autoTimer.get() < 1){
-    //  m_robotContainer.autoDrive(4.0, 4.0, 0.0);
-    //}else if(autoTimer.get() < 2){
-    // m_robotContainer.autoDrive(0.0, 0.0, 0.0);
-    // m_robotContainer.shoot(0);
-    //}else if(autoTimer.get() < 3){
+   // if(autoTimer.get() < 1){
+   // m_robotContainer.autoDrive(4.0, 4.0, 0.0);
+   // }else if(autoTimer.get() < 2){
+   // m_robotContainer.autoDrive(0.0, 0.0, 0.0);
+   // m_robotContainer.shoot(0);
+   // }else if(autoTimer.get() < 3){
       //add other stuff
-    //}
-  }
+    }
+  
 
   @Override
   public void teleopInit() {
