@@ -18,15 +18,15 @@
           }
         },
         {
-          "type": "wait",
-          "data": {
-            "waitTime": 2.0
-          }
-        },
-        {
           "type": "parallel",
           "data": {
             "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Ground"
+                }
+              },
               {
                 "type": "sequential",
                 "data": {
@@ -34,31 +34,19 @@
                     {
                       "type": "wait",
                       "data": {
-                        "waitTime": 1.0
+                        "waitTime": 2.0
                       }
                     },
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "Second Note Pickup"
+                        "pathName": "Slow Back"
                       }
                     }
                   ]
                 }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Ground"
-                }
               }
             ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Forward to shoot"
           }
         },
         {
@@ -66,24 +54,18 @@
           "data": {
             "commands": [
               {
+                "type": "path",
+                "data": {
+                  "pathName": "slow forward"
+                }
+              },
+              {
                 "type": "named",
                 "data": {
                   "name": "Load"
                 }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 1.0
-                }
               }
             ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Back to Midline"
           }
         }
       ]

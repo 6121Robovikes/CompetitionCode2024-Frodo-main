@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.2153924307848631,
-        "y": 4.627596178269281
+        "x": 3.5,
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 0.07105097594810883,
-        "y": 2.7259285672417506
+        "x": 3.494656220081673,
+        "y": 5.495887145620446
       },
       "isLocked": false,
-      "linkedName": "Source Note 2"
+      "linkedName": "reverse slow back"
     },
     {
       "anchor": {
-        "x": 4.254410816513942,
-        "y": 1.3912389363240272
+        "x": 1.35,
+        "y": 5.5
       },
       "prevControl": {
-        "x": 2.300756139973819,
-        "y": 1.4208397647564543
+        "x": 1.3633965729469937,
+        "y": 5.505754088431254
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,8 +32,8 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 1.0,
+    "maxAcceleration": 2.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
@@ -43,10 +43,10 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Source Side Paths",
+  "folder": null,
   "previewStartingState": {
-    "rotation": -35.09581678702618,
+    "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }
