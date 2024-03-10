@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.4487602821359506,
-        "y": 5.505754088431254
+        "x": 2.5,
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.4487602821359506,
-        "y": 5.505754088431254
+        "x": 3.5,
+        "y": 5.5
       },
       "isLocked": false,
       "linkedName": "Center Note 2 to Shoot"
     },
     {
       "anchor": {
-        "x": 1.4127312870010371,
-        "y": 5.505754088431254
+        "x": 1.4,
+        "y": 5.5
       },
       "prevControl": {
-        "x": 0.4127312870010369,
-        "y": 5.505754088431254
+        "x": 0.3999999999999997,
+        "y": 5.5
       },
       "nextControl": null,
       "isLocked": false,
