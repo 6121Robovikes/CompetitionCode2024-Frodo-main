@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.35,
-      "y": 5.5
+      "x": 1.343662687325376,
+      "y": 5.555088802485298
     },
     "rotation": 0
   },
@@ -14,7 +14,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 1.0
+            "waitTime": 0.5
           }
         },
         {
@@ -40,53 +40,22 @@
                     {
                       "type": "wait",
                       "data": {
-                        "waitTime": 3.0
+                        "waitTime": 1.0
                       }
                     },
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "Slow Back"
-                      }
-                    },
-                    {
-                      "type": "wait",
-                      "data": {
-                        "waitTime": 1.0
+                        "pathName": "Middle 2 Note Back"
                       }
                     }
                   ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "stow"
-          }
-        },
-        {
-          "type": "sequential",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "slow forward"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 2.0
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Load"
+                  "name": "Stow"
                 }
               }
             ]

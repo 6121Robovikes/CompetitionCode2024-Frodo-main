@@ -4,6 +4,8 @@
 
 package frc.robot.commands;
 
+import org.ejml.equation.Variable;
+
 import edu.wpi.first.units.Voltage;
 
 //import java.lang.invoke.ClassSpecializer.SpeciesData;
@@ -19,7 +21,7 @@ public class Ground extends Command {
    
     double groundPosition = 180; //determine this position 
     double stowPosition = -2;
-    double speed;
+    Boolean volts;
 
     
 
@@ -56,8 +58,9 @@ public class Ground extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    //m_intake.getVoltage();
-    //while (Voltage =0){
+    if (volts = false) {
+      m_pivot.setPosition(stowPosition);
+    }
     return false;
   } 
 
