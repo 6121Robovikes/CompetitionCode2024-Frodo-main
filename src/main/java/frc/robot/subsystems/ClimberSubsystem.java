@@ -63,12 +63,12 @@ public class ClimberSubsystem extends SubsystemBase{
 
   public void climbExtend() {
 
-    m_climb.setVoltage(-35);
+    m_climb.setVoltage(-55);
   }
 
     public void climbRetract() {
 
-      m_climb.setVoltage(35);
+      m_climb.setVoltage(55);
 
  }
  public void climbStop() {

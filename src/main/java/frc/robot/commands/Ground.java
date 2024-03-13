@@ -19,8 +19,8 @@ public class Ground extends Command {
     PivotSubsystem m_pivot;
     IntakeSubsystem m_intake;
    
-    double groundPosition = 180; //determine this position 
-    double stowPosition = -2;
+    double groundPosition = 80; //determine this position 
+    double stowPosition = 0;
     Boolean volts;
 
     
@@ -58,9 +58,9 @@ public class Ground extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (volts = false) {
-      m_pivot.setPosition(stowPosition);
-    }
+//    if (volts = false) {
+//      m_pivot.setPosition(stowPosition);
+//    }
     return false;
   } 
 
