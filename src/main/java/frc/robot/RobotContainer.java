@@ -66,7 +66,7 @@ public class RobotContainer {
   // Register Named Commands
   NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(3));
   NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(4));
-  NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake));
+  NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake).withTimeout(1));
 
   
     
@@ -142,7 +142,7 @@ public class RobotContainer {
     
 
     //default shooterspeed
-    m_shooter.setDefaultCommand(new Shoot(m_shooter, 65)); //adjust to 70+ for competition
+    m_shooter.setDefaultCommand(new Shoot(m_shooter, 65)); //adjust to 65 for competition
 
 
   }

@@ -1,0 +1,81 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 1.343662687325376,
+      "y": 5.555088802485298
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Load"
+          }
+        },
+        {
+          "type": "deadline",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Ground"
+                }
+              },
+              {
+                "type": "sequential",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 1.0
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "Middle 2 Note Back"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Stow"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Middle 2 Note Forward"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Load"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

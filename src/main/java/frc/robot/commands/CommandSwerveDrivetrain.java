@@ -81,19 +81,11 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
         this::getCurrentRobotChassisSpeeds,
         (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
 
-            
-        //Code from CSA-NOo movement
-        //this::getCurrentRobotChassisSpeeds,
-            // (speeds)->this.setControl(AutoRequest.withSpeeds(speeds)), // Consumer of ChassisSpeeds to drive the robot
-           // (speed) -> {RobotContainer.drivetrain.applyRequest(() ->
-             //   drive.withVelocityX(speed.vxMetersPerSecond) // Drive forward with                                                                               // negative Y (forward)
-            //.withVelocityY(speed.vyMetersPerSecond) // Drive left with negative X (left)
-            //.withRotationalRate(speed.omegaRadiansPerSecond) // Drive counterclockwise with negative X (left)
-            //);},
+        
 
 
             new HolonomicPathFollowerConfig(new PIDConstants(0, 0, 0),
-                                            new PIDConstants(0, 0, 0),//numbers to match team that has theirs working
+                                            new PIDConstants(5, 0, 0),//numbers to match team that has theirs working
                                             TunerConstants.kSpeedAt12VoltsMps,
                                             driveBaseRadius,
                                             new ReplanningConfig()),

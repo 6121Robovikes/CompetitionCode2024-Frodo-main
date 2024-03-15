@@ -19,8 +19,8 @@ public class Ground extends Command {
     PivotSubsystem m_pivot;
     IntakeSubsystem m_intake;
    
-    double groundPosition = 80; //determine this position 
-    double stowPosition = 0;
+    double groundPosition = 92; //determine this position 
+    double stowPosition = 1;
     Boolean volts;
 
     

@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.0,
-        "y": 5.555088802485298
+        "x": 1.2203329399526117,
+        "y": 4.74288880104151
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.9802661143783826,
-        "y": 5.555088802485298
+        "x": 1.290689073627975,
+        "y": 2.5763869970515443
       },
       "isLocked": false,
-      "linkedName": "Middle 2 Note- 1"
+      "linkedName": "Mid-line Shoot position"
     },
     {
       "anchor": {
-        "x": 1.383130458568611,
-        "y": 5.555088802485298
+        "x": 8.04775064614323,
+        "y": 0.7846260485673593
       },
       "prevControl": {
-        "x": 1.9652800844063243,
-        "y": 5.574822688106915
+        "x": 5.190306528972544,
+        "y": 0.7612043754757987
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Back to mid-line"
     }
   ],
   "rotationTargets": [],
@@ -43,9 +43,9 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "2 Note Center",
+  "folder": "2 Note Midline",
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": -35.53767779197432,
     "velocity": 0
   },
   "useDefaultConstraints": true
