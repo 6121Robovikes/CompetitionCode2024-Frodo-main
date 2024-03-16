@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.2203329399526117,
-      "y": 4.74288880104151
+      "x": 1.22,
+      "y": 4.74
     },
-    "rotation": -35.90972307917775
+    "rotation": -35.2861558826277
   },
   "command": {
     "type": "sequential",
@@ -34,9 +34,22 @@
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Ground"
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 3.0
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Ground"
+                      }
+                    }
+                  ]
                 }
               }
             ]

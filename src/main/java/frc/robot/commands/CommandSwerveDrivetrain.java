@@ -65,7 +65,7 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
     }
 
     private void configurePathPlanner() {
-        double driveBaseRadius = 0;
+        double driveBaseRadius = .867;
         for (var moduleLocation : m_moduleLocations) {
             driveBaseRadius = Math.max(driveBaseRadius, moduleLocation.getNorm());
         }
@@ -85,7 +85,7 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
 
 
             new HolonomicPathFollowerConfig(new PIDConstants(0, 0, 0),
-                                            new PIDConstants(5, 0, 0),//numbers to match team that has theirs working
+                                            new PIDConstants(10, 0, 0),//numbers to match team that has theirs working
                                             TunerConstants.kSpeedAt12VoltsMps,
                                             driveBaseRadius,
                                             new ReplanningConfig()),

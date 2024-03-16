@@ -8,20 +8,20 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.290689073627975,
-        "y": 2.5763869970515443
+        "x": 2.705300795216977,
+        "y": 1.5885777925402012
       },
       "isLocked": false,
       "linkedName": "Mid-line Shoot position"
     },
     {
       "anchor": {
-        "x": 8.04775064614323,
-        "y": 0.7846260485673593
+        "x": 11.22,
+        "y": 0.85
       },
       "prevControl": {
-        "x": 5.190306528972544,
-        "y": 0.7612043754757987
+        "x": 9.6516285340263,
+        "y": 1.6063158203239487
       },
       "nextControl": null,
       "isLocked": false,
@@ -45,7 +45,7 @@
   "reversed": false,
   "folder": "2 Note Midline",
   "previewStartingState": {
-    "rotation": -35.53767779197432,
+    "rotation": -50.10898825213775,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -46,7 +46,7 @@ public class TunerConstants {
     
         // The stator current at which the wheels start to slip;
         // This needs to be tuned to your individual robot
-        private static final double kSlipCurrentA = 80;              //TODO: Decrease this value to robot wheel slipping, Default was 300. I think it should be closer to 50 or 60. Phoenix example changed it to 150.
+        private static final double kSlipCurrentA =75;              //TODO: Decrease this value to robot wheel slipping, Default was 300. I think it should be closer to 50 or 60. Phoenix example changed it to 150.
     
         // Theoretical free speed (m/s) at 12v applied output;
         // This needs to be tuned to your individual robot
@@ -54,9 +54,11 @@ public class TunerConstants {
     
         // Every 1 rotation of the azimuth results in kCoupleRatio drive motor turns;
         // This may need to be tuned to your individual robot
-        private static final double kCoupleRatio = .25;
-    
-        private static final double kDriveGearRatio = 5.902777777777778;
+      //  private static final double kCoupleRatio = .25;
+        private static final double kCoupleRatio = 3.5714285714285716;
+
+        private static final double kDriveGearRatio = 6.746031746031747;
+       // private static final double kDriveGearRatio = 6.746031746031747;
         private static final double kSteerGearRatio = 21.428571428571427;
         private static final double kWheelRadiusInches = 2;
     
