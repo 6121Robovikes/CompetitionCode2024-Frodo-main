@@ -8,24 +8,24 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.07,
-        "y": 5.64
+        "x": 3.0897330333106523,
+        "y": 5.63013135274478
       },
       "isLocked": false,
       "linkedName": "Shooting Spot"
     },
     {
       "anchor": {
-        "x": 3.07,
-        "y": 5.6438912877825755
+        "x": 1.669271800082063,
+        "y": 5.64
       },
       "prevControl": {
-        "x": 2.07,
-        "y": 5.6438912877825755
+        "x": 1.6675914890307872,
+        "y": 5.640000000003201
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Middle 2 Note- 1"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
