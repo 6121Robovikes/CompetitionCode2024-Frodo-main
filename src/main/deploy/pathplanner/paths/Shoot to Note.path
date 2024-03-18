@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.04,
-        "y": 5.6438912877825755
+        "x": 1.28,
+        "y": 6.344444227349993
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.0202661143783827,
-        "y": 5.6438912877825755
+        "x": 1.3239288017037585,
+        "y": 6.354311170160802
       },
       "isLocked": false,
-      "linkedName": "Middle 2 Note- 1"
+      "linkedName": "Amp 1"
     },
     {
       "anchor": {
-        "x": 1.383130458568611,
-        "y": 5.555088802485298
+        "x": 2.6460991383521244,
+        "y": 6.699654168539107
       },
       "prevControl": {
-        "x": 1.9652800844063243,
-        "y": 5.574822688106915
+        "x": 2.68556690959536,
+        "y": 6.6799202829174895
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "amp 2"
     }
   ],
   "rotationTargets": [],
@@ -39,13 +39,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": 0.0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "2 Note Center",
+  "folder": "Amp 2 Note",
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": 28.926425835253713,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.07,
+        "x": 1.31,
         "y": 5.64
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.07,
+        "x": 1.31,
         "y": 5.64
       },
       "isLocked": false,
-      "linkedName": "Shooting Spot"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 3.07,
-        "y": 5.6438912877825755
+        "x": 1.68,
+        "y": 5.64
       },
       "prevControl": {
-        "x": 2.07,
-        "y": 5.6438912877825755
+        "x": 1.7023579309749106,
+        "y": 5.64
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Middle 2 Note- 1"
+      "linkedName": "Shooting Spot"
     }
   ],
   "rotationTargets": [],

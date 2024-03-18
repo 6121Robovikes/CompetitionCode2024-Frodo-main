@@ -21,7 +21,7 @@ public class Ground extends Command {
    
     double groundPosition = 92; //determine this position 
     double stowPosition = 1;
-    Boolean volts;
+    Integer voltage;
 
     
 
@@ -58,9 +58,11 @@ public class Ground extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-//    if (volts = false) {
-//      m_pivot.setPosition(stowPosition);
-//    }
+    m_intake.getVoltage();
+    //if (voltage = 0) {
+    //  m_pivot.setPosition(stowPosition);
+    //  return true;
+    //}
     return false;
   } 
 

@@ -2,49 +2,23 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.3140618588929502,
-      "y": 5.6438912877825755
+      "x": 1.28,
+      "y": 6.34
     },
-    "rotation": 0
+    "rotation": 23.632205496648698
   },
   "command": {
     "type": "sequential",
     "data": {
       "commands": [
         {
-          "type": "parallel",
+          "type": "named",
           "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Shooting Position 1"
-                }
-              },
-              {
-                "type": "sequential",
-                "data": {
-                  "commands": [
-                    {
-                      "type": "wait",
-                      "data": {
-                        "waitTime": 0.75
-                      }
-                    },
-                    {
-                      "type": "named",
-                      "data": {
-                        "name": "Load"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+            "name": "Load"
           }
         },
         {
-          "type": "parallel",
+          "type": "deadline",
           "data": {
             "commands": [
               {
@@ -66,7 +40,7 @@
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "Back to shoot 2"
+                        "pathName": "Shoot to Note"
                       }
                     }
                   ]
@@ -88,7 +62,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Shooting position forward"
+                  "pathName": "Note 2 Forward"
                 }
               },
               {

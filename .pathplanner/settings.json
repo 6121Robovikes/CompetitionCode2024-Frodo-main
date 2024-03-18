@@ -4,7 +4,8 @@
   "holonomicMode": true,
   "pathFolders": [
     "2 Note Center",
-    "2 Note Midline"
+    "2 Note Midline",
+    "Amp 2 Note"
   ],
   "autoFolders": [],
   "defaultMaxVel": 2.0,
