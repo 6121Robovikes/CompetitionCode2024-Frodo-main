@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.95,
-        "y": 0.85
+        "x": 1.68,
+        "y": 6.47
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.9683129985967085,
-        "y": 0.9083787629507992
+        "x": 0.8207147183525153,
+        "y": 7.6567476211875505
       },
       "isLocked": false,
-      "linkedName": "Back to mid-line"
+      "linkedName": "Amp 1"
     },
     {
       "anchor": {
-        "x": 1.2203329399526117,
-        "y": 4.74288880104151
+        "x": 8.95,
+        "y": 6.9
       },
       "prevControl": {
-        "x": 1.3023928389452968,
-        "y": 2.025977259506621
+        "x": 7.875578828080734,
+        "y": 6.837791367890429
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Mid-line Shoot position"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -39,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -34.87532834460212,
+    "rotation": 0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "2 Note Midline",
+  "folder": "Amp 2 Note",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

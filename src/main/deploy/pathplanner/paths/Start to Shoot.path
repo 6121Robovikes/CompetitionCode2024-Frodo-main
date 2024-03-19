@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.28,
-        "y": 6.344444227349993
+        "x": 0.7812469471092803,
+        "y": 6.699654168539107
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.284461030460524,
-        "y": 6.354311170160802
+        "x": 0.7911138899200891,
+        "y": 6.679920282917489
       },
       "isLocked": false,
-      "linkedName": "amp 3"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.28,
-        "y": 6.344444227349993
+        "x": 1.68,
+        "y": 6.47
       },
       "prevControl": {
-        "x": 1.2426601194812206,
-        "y": 6.331659928786849
+        "x": 1.650399171567574,
+        "y": 6.460133057189191
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,13 +39,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 20.2825590889166,
+    "rotation": 26.095424157388315,
     "rotateFast": false
   },
   "reversed": false,
   "folder": "Amp 2 Note",
   "previewStartingState": {
-    "rotation": 20.695450734063265,
+    "rotation": 59.98163257239086,
     "velocity": 0
   },
   "useDefaultConstraints": true
