@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.2203329399526117,
-        "y": 4.74288880104151
+        "x": 1.68,
+        "y": 5.3
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.705300795216977,
-        "y": 1.5885777925402012
+        "x": 3.164967855264365,
+        "y": 2.145688991498691
       },
       "isLocked": false,
       "linkedName": "Mid-line Shoot position"

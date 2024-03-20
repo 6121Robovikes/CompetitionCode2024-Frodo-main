@@ -57,7 +57,7 @@ public class IntakeSubsystem extends SubsystemBase {
   public void ampOut() {
 
 
-      m_intakeMotor.setVoltage(-8);
+      m_intakeMotor.setVoltage(-18);
 
 
   }

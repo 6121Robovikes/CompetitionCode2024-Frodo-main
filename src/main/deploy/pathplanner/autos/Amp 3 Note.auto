@@ -24,12 +24,6 @@
           }
         },
         {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.5
-          }
-        },
-        {
           "type": "named",
           "data": {
             "name": "Load"
@@ -122,13 +116,13 @@
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "to zone-line pt.1"
+                        "pathName": "2 shoot to zone-line"
                       }
                     },
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "to zone-line pt.2"
+                        "pathName": "back to shoot from zone-line"
                       }
                     }
                   ]
@@ -141,12 +135,6 @@
           "type": "sequential",
           "data": {
             "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "back to shoot from zone-line"
-                }
-              },
               {
                 "type": "named",
                 "data": {

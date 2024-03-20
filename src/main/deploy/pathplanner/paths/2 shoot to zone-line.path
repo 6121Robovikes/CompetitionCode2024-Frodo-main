@@ -8,20 +8,20 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 0.8207147183525153,
-        "y": 7.6567476211875505
+        "x": 1.676777660338694,
+        "y": 6.463556712056847
       },
       "isLocked": false,
       "linkedName": "Amp 1"
     },
     {
       "anchor": {
-        "x": 8.95,
+        "x": 8.99,
         "y": 6.9
       },
       "prevControl": {
-        "x": 7.875578828080734,
-        "y": 6.837791367890429
+        "x": 8.970299035342485,
+        "y": 6.898860599591733
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,13 +39,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": 0.6518356351542478,
     "rotateFast": false
   },
   "reversed": false,
   "folder": "Amp 2 Note",
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": 43.76865688480891,
     "velocity": 0
   },
   "useDefaultConstraints": true
