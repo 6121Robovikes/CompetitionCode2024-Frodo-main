@@ -11,16 +11,16 @@
         "x": 1.7239288017037584,
         "y": 6.479866942810801
       },
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": "Amp 1"
     },
     {
       "anchor": {
-        "x": 2.6263652527305066,
+        "x": 2.67,
         "y": 7.1239327094038805
       },
       "prevControl": {
-        "x": 2.6602450127977177,
+        "x": 2.703879760067211,
         "y": 7.118999237998477
       },
       "nextControl": null,
@@ -32,8 +32,8 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 2.0,
-    "maxAcceleration": 2.0,
+    "maxVelocity": 2.75,
+    "maxAcceleration": 2.5,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },

@@ -64,9 +64,9 @@ public class RobotContainer {
   public RobotContainer() {
     
   // Register Named Commands
-  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(1.5));
-  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(4));
-  NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake).withTimeout(1));
+  NamedCommands.registerCommand("Load", new LoadTheShooter(m_pivot, m_intake).withTimeout(1));
+  NamedCommands.registerCommand("Ground", new Ground(m_pivot, m_intake).withTimeout(2));
+  NamedCommands.registerCommand("Stow", new Stow(m_pivot, m_intake).withTimeout(.5));
 
   
     
