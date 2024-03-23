@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.35,
-      "y": 5.5
+      "x": 0.72,
+      "y": 4.35
     },
-    "rotation": 0
+    "rotation": -59.963147113730706
   },
   "command": {
     "type": "sequential",
@@ -14,7 +14,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 1.0
+            "waitTime": 8.0
           }
         },
         {
@@ -26,7 +26,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Slow Back"
+            "pathName": "shoot and go back source side"
           }
         }
       ]
