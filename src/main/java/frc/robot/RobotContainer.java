@@ -135,6 +135,7 @@ public class RobotContainer {
     m_controller.button(12).whileTrue(new ClimbRetract(m_climb));
     m_controller.button(12).onFalse(new ClimbStop(m_climb));
     m_controller.button(3).whileTrue(new Stow(m_pivot, m_intake));
+    // whileTrue and onTrue determine if you press or hold the button
     
     //Default Commands to run when no other commands require the subsystem. Used to stop motors when not needed anymore
     m_intake.setDefaultCommand(new Stow(m_pivot, m_intake));

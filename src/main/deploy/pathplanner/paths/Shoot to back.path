@@ -3,32 +3,38 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.66,
-        "y": 6.49
+        "x": 1.175924659541628,
+        "y": 6.670053340106681
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.7039288017037584,
-        "y": 6.499866942810802
+        "x": 1.3535296301361848,
+        "y": 5.999101228971689
       },
-      "isLocked": true,
-      "linkedName": "Amp 1"
+      "isLocked": false,
+      "linkedName": "1-amp side"
     },
     {
       "anchor": {
-        "x": 3.0,
-        "y": 7.05
+        "x": 8.033449913053675,
+        "y": 5.653758230593384
       },
       "prevControl": {
-        "x": 3.033879760067211,
-        "y": 7.045066528594596
+        "x": 7.105957288837655,
+        "y": 6.324710341728376
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "2-amp side"
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0,
+      "rotationDegrees": 0,
+      "rotateFast": false
+    }
+  ],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -39,13 +45,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0,
+    "rotation": -11.768288932020543,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Amp 2 Note",
+  "folder": "Get the center notes",
   "previewStartingState": {
-    "rotation": 28.926425835253713,
+    "rotation": 45.000000000000036,
     "velocity": 0
   },
   "useDefaultConstraints": true
