@@ -19,7 +19,7 @@ public class Ground extends Command {
     PivotSubsystem m_pivot;
     IntakeSubsystem m_intake;
    
-    double groundPosition = 83; //determine this position 
+    double groundPosition = 98; //97 for SVSU 
     double stowPosition = 1;
     Integer voltage;
 
