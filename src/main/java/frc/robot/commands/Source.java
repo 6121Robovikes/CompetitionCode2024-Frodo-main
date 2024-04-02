@@ -15,7 +15,7 @@ public class Source extends Command {
   PivotSubsystem m_pivot;
   IntakeSubsystem m_intake;
 
-  double sourcePosition = 38;  
+  double sourcePosition = 35;  
 
   public Source(PivotSubsystem m_pivot, IntakeSubsystem m_intake) 
   {

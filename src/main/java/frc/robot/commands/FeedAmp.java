@@ -14,7 +14,7 @@ public class FeedAmp extends Command {
   IntakeSubsystem m_intake;
   PivotSubsystem m_pivot;   
   double speed;
-  double ampPosition = 40;
+  double ampPosition = 41;
 
   public FeedAmp(IntakeSubsystem m_intake, PivotSubsystem m_pivot) {
    
