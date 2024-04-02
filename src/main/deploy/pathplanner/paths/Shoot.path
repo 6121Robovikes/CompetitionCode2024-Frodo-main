@@ -11,8 +11,8 @@
         "x": 3.00569996678455,
         "y": 7.05393270940388
       },
-      "isLocked": false,
-      "linkedName": null
+      "isLocked": true,
+      "linkedName": "Amp 3"
     },
     {
       "anchor": {
@@ -24,8 +24,8 @@
         "y": 6.462847541079698
       },
       "nextControl": null,
-      "isLocked": false,
-      "linkedName": null
+      "isLocked": true,
+      "linkedName": "Amp 1"
     }
   ],
   "rotationTargets": [],

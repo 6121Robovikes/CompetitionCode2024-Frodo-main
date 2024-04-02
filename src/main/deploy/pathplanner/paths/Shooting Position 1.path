@@ -11,20 +11,20 @@
         "x": 1.31,
         "y": 5.64
       },
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.7,
+        "x": 1.9,
         "y": 5.64
       },
       "prevControl": {
-        "x": 1.7223579309749106,
+        "x": 1.9223579309749106,
         "y": 5.64
       },
       "nextControl": null,
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": "Shooting Spot"
     }
   ],

@@ -3,28 +3,28 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.29,
-        "y": 7.74
+        "x": 7.954514370567204,
+        "y": 4.282253179890976
       },
       "prevControl": null,
       "nextControl": {
-        "x": 5.310173697270472,
-        "y": 7.73568316367402
+        "x": 5.7407158466242745,
+        "y": 4.941973022319797
       },
-      "isLocked": false,
-      "linkedName": null
+      "isLocked": true,
+      "linkedName": "C"
     },
     {
       "anchor": {
-        "x": 8.95,
-        "y": 6.9
+        "x": 7.954514370567204,
+        "y": 5.867129109436536
       },
       "prevControl": {
-        "x": 8.960942537269691,
-        "y": 6.90685996756609
+        "x": 6.4082335297338195,
+        "y": 6.124767513443729
       },
       "nextControl": null,
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": null
     }
   ],
@@ -39,13 +39,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": -7.975666664783695,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Amp 2 Note",
+  "folder": "Get the center notes",
   "previewStartingState": {
-    "rotation": -20.742139018716202,
+    "rotation": -20.47254839210892,
     "velocity": 0
   },
   "useDefaultConstraints": true

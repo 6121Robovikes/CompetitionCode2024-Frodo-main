@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 9.04,
-        "y": 7.15
+        "x": 8.340521559787769,
+        "y": 7.3544053507507865
       },
       "prevControl": null,
       "nextControl": {
-        "x": 9.04,
-        "y": 7.15
+        "x": 8.340521559787769,
+        "y": 7.3544053507507865
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Amp2"
     },
     {
       "anchor": {
@@ -24,7 +24,7 @@
         "y": 6.469430299795866
       },
       "nextControl": null,
-      "isLocked": false,
+      "isLocked": true,
       "linkedName": null
     }
   ],

@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.918404239090931,
-        "y": 5.64
+        "x": 8.328810723241988,
+        "y": 4.122214464115091
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.9381372724015833,
-        "y": 5.63013135274478
+        "x": 6.2794143277302235,
+        "y": 4.087081954477746
       },
       "isLocked": true,
-      "linkedName": "2"
+      "linkedName": "5"
     },
     {
       "anchor": {
@@ -20,11 +20,11 @@
         "y": 5.64
       },
       "prevControl": {
-        "x": 1.8983196889487242,
-        "y": 5.640000000003201
+        "x": 4.640812990042527,
+        "y": 4.578937089400569
       },
       "nextControl": null,
-      "isLocked": true,
+      "isLocked": false,
       "linkedName": "Shooting Spot"
     }
   ],

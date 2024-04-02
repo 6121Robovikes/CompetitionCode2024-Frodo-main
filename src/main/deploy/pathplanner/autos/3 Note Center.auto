@@ -2,35 +2,49 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.7812469471092803,
-      "y": 6.699654168539107
+      "x": 1.3140618588929502,
+      "y": 5.6438912877825755
     },
-    "rotation": 55.00797980144131
+    "rotation": 0
   },
   "command": {
     "type": "sequential",
     "data": {
       "commands": [
         {
-          "type": "wait",
+          "type": "parallel",
           "data": {
-            "waitTime": 0.5
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Shooting Position 1"
+                }
+              },
+              {
+                "type": "sequential",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 0.5
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Load"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         },
         {
-          "type": "path",
-          "data": {
-            "pathName": "Start to shoot"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Load"
-          }
-        },
-        {
-          "type": "deadline",
+          "type": "parallel",
           "data": {
             "commands": [
               {
@@ -46,13 +60,13 @@
                     {
                       "type": "wait",
                       "data": {
-                        "waitTime": 0.5
+                        "waitTime": 1.0
                       }
                     },
                     {
                       "type": "path",
                       "data": {
-                        "pathName": "Shoot to Note"
+                        "pathName": "Back to shoot 2"
                       }
                     }
                   ]
@@ -68,19 +82,13 @@
           }
         },
         {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.3
-          }
-        },
-        {
           "type": "sequential",
           "data": {
             "commands": [
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Shoot"
+                  "pathName": "Shooting position forward"
                 }
               },
               {
@@ -97,13 +105,19 @@
           "data": {
             "commands": [
               {
+                "type": "path",
+                "data": {
+                  "pathName": "Get note 3"
+                }
+              },
+              {
                 "type": "sequential",
                 "data": {
                   "commands": [
                     {
                       "type": "wait",
                       "data": {
-                        "waitTime": 1.5
+                        "waitTime": 1.0
                       }
                     },
                     {
@@ -114,40 +128,26 @@
                     }
                   ]
                 }
-              },
-              {
-                "type": "sequential",
-                "data": {
-                  "commands": [
-                    {
-                      "type": "path",
-                      "data": {
-                        "pathName": "2 shoot to zone-line"
-                      }
-                    },
-                    {
-                      "type": "path",
-                      "data": {
-                        "pathName": "back to shoot from zone-line"
-                      }
-                    }
-                  ]
-                }
               }
             ]
           }
         },
         {
-          "type": "sequential",
+          "type": "named",
           "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Load"
-                }
-              }
-            ]
+            "name": "Stow"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Shoot note 3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Load"
           }
         }
       ]
