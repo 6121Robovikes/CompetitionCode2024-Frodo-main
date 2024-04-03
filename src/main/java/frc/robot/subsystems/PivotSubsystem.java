@@ -51,7 +51,7 @@ public class PivotSubsystem extends SubsystemBase {
     
     m_pivotMotor.getConfigurator().apply(pivotFeedbackConfigs);
 
-    pivotCurrentLimits.withStatorCurrentLimit(65); //TODO: Set Current Limit higher if necessary
+    pivotCurrentLimits.withStatorCurrentLimit(70); //TODO: Set Current Limit higher if necessary
     pivotCurrentLimits.withStatorCurrentLimitEnable(true);
 
     m_pivotMotor.getConfigurator().apply(pivotCurrentLimits);
