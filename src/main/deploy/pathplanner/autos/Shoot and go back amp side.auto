@@ -14,19 +14,32 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 8.0
+            "waitTime": 5.0
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "Load"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "go back amp side"
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "go back amp side"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 0.5
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Load"
+                }
+              }
+            ]
           }
         }
       ]

@@ -16,15 +16,15 @@
     },
     {
       "anchor": {
-        "x": 1.66,
-        "y": 6.49
+        "x": 1.669271800082063,
+        "y": 6.699654168539107
       },
       "prevControl": {
-        "x": 1.649271800082063,
-        "y": 6.462847541079698
+        "x": 1.658543600164126,
+        "y": 6.672501709618805
       },
       "nextControl": null,
-      "isLocked": true,
+      "isLocked": false,
       "linkedName": "Amp 1"
     }
   ],
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 25.85365398047554,
+    "rotation": 33.69006752597984,
     "rotateFast": false
   },
   "reversed": false,
