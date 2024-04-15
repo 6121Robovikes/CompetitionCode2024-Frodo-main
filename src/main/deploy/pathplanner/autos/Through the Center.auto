@@ -88,6 +88,12 @@
           }
         },
         {
+          "type": "path",
+          "data": {
+            "pathName": "Shoot 1"
+          }
+        },
+        {
           "type": "named",
           "data": {
             "name": "Load"
@@ -126,21 +132,9 @@
           }
         },
         {
-          "type": "wait",
-          "data": {
-            "waitTime": 1.0
-          }
-        },
-        {
           "type": "named",
           "data": {
             "name": "Stow"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Load"
           }
         },
         {
