@@ -143,7 +143,7 @@ public class RobotContainer {
     
 
     //default shooterspeed
-    m_shooter.setDefaultCommand(new Shoot(m_shooter, 72)); //adjust to 72 for competition
+    m_shooter.setDefaultCommand(new Shoot(m_shooter, 85)); //adjust to 72 for competition
 
 
   }
