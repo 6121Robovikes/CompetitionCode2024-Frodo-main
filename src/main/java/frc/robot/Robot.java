@@ -15,6 +15,11 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Shoot;
 import frc.robot.subsystems.PivotSubsystem;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
+
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
@@ -43,6 +48,24 @@ public class Robot extends TimedRobot {
     m_camera = CameraServer.startAutomaticCapture();
     m_camera.setResolution(240, 200);
     m_camera.setFPS(25);
+
+
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    NetworkTableEntry tx = table.getEntry("tx");
+    NetworkTableEntry ty = table.getEntry("ty");
+    NetworkTableEntry ta = table.getEntry("ta");
+ 
+    double x = tx.getDouble(0.0);
+    double y = ty.getDouble(0.0);
+    double area = ta.getDouble(0.0);
+
+    //x is horizontal target offset (in degrees)
+    //y is vertical target offset (in degrees)
+    //area is the percent of the screen covered by the april tag (0 to 100)
+ 
+    SmartDashboard.putNumber("LimelightX", x);
+    SmartDashboard.putNumber("LimelightY", y);
+    SmartDashboard.putNumber("LimelightArea", area);
   }
 
   /**
